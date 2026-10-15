@@ -2,7 +2,7 @@
 // Replace with your real inbox, or swap for a form service like Formspree.
 const CONTACT_EMAIL = "hello@example.com";
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
 /* ---------- Header border on scroll ---------- */
 const header = document.querySelector(".site-header");
@@ -24,7 +24,7 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(fa
 /* ---------- Scroll reveal ---------- */
 // Stagger children within a group: 90ms for text, 100ms for cards.
 document.querySelectorAll("[data-reveal-group]").forEach((group) => {
-  const step = group.matches(".cards, .mosaic, .benefits") ? 100 : 90;
+  const step = group.matches(".cards, .mosaic, .benefits, .principles, .symptoms, .cases, .people") ? 100 : 90;
   group.querySelectorAll(":scope > [data-reveal], :scope > * > [data-reveal]").forEach((el, i) => {
     el.style.setProperty("--delay", `${i * step}ms`);
   });
@@ -47,72 +47,74 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
   revealEls.forEach((el) => io.observe(el));
 }
 
-/* ---------- Process tabs ---------- */
-const tabs = [...document.querySelectorAll('[role="tab"]')];
-const selectTab = (tab) => {
-  tabs.forEach((t) => {
-    const on = t === tab;
-    t.setAttribute("aria-selected", String(on));
-    t.tabIndex = on ? 0 : -1;
-    document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
-  });
-};
-tabs.forEach((tab, i) => {
-  tab.addEventListener("click", () => selectTab(tab));
-  tab.addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
-    selectTab(next);
-    next.focus();
-  });
-});
-
-/* ---------- Service links preselect the challenge ---------- */
-const challenge = document.getElementById("challenge");
-document.querySelectorAll("[data-challenge]").forEach((a) => {
-  a.addEventListener("click", () => { challenge.value = a.dataset.challenge; });
-});
-
-/* ---------- Contact form -> validated, pre-filled email ---------- */
+/* ---------- Contact form ---------- */
 const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let firstInvalid = null;
-  form.querySelectorAll("[required]").forEach((field) => {
-    const ok = field.checkValidity();
-    field.setAttribute("aria-invalid", String(!ok));
-    if (!ok && !firstInvalid) firstInvalid = field;
+if (form) {
+  // Preselect the challenge from links like contact.html?challenge=ux
+  const challenge = document.getElementById("challenge");
+  const preset = new URLSearchParams(location.search).get("challenge");
+  if (preset && challenge.querySelector(`option[value="${CSS.escape(preset)}"]`)) challenge.value = preset;
+
+  const status = document.getElementById("form-status");
+  const messages = {
+    "f-name": { valueMissing: "Please add your name." },
+    "f-email": {
+      valueMissing: "Please add your work email so we can reply.",
+      typeMismatch: "That email doesn't look quite right — try name@company.com.",
+    },
+    "f-improve": { valueMissing: "Tell us a little about what you'd like to improve — a sentence is enough." },
+  };
+
+  const validate = (field) => {
+    const error = form.querySelector(`[data-error-for="${field.id}"]`);
+    let msg = "";
+    if (field.validity.valueMissing || (field.required && !field.value.trim())) msg = messages[field.id].valueMissing;
+    else if (field.validity.typeMismatch) msg = messages[field.id].typeMismatch;
+    field.setAttribute("aria-invalid", String(Boolean(msg)));
+    if (error) error.textContent = msg;
+    return !msg;
+  };
+
+  const required = [...form.querySelectorAll("[required]")];
+  required.forEach((field) => {
+    // Skip blur validation when focus moves to the submit button: the error
+    // appearing would shift the button and swallow the click.
+    field.addEventListener("blur", (e) => {
+      if (field.value && !e.relatedTarget?.matches('[type="submit"]')) validate(field);
+    });
+    field.addEventListener("input", () => { if (field.getAttribute("aria-invalid") === "true") validate(field); });
   });
-  if (firstInvalid) {
-    status.className = "form-status error";
-    status.textContent = "Please add your name, a valid work email, and what you'd like to improve.";
-    firstInvalid.focus();
-    return;
-  }
 
-  const d = new FormData(form);
-  const body = [
-    `Name: ${d.get("name")}`,
-    `Email: ${d.get("email")}`,
-    `Company / product: ${d.get("company")}`,
-    `Main challenge: ${d.get("challenge")}`,
-    `Start: ${d.get("start")}`,
-    `Budget: ${d.get("budget")}`,
-    "",
-    "What we'd like to improve:",
-    d.get("improve"),
-  ].join("\n");
-  const subject = `Project enquiry from ${d.get("name")}`;
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const invalid = required.filter((field) => !validate(field));
+    if (invalid.length) {
+      status.className = "form-status error";
+      status.textContent = invalid.length === 1
+        ? "One field needs attention before we can send this."
+        : `${invalid.length} fields need attention before we can send this.`;
+      invalid[0].focus();
+      return;
+    }
 
-  status.className = "form-status success";
-  status.textContent = "Thanks for sharing the details. We'll review your message and get back to you if there's a good fit.";
-});
+    const d = new FormData(form);
+    const body = [
+      `Name: ${d.get("name")}`,
+      `Email: ${d.get("email")}`,
+      `Company / product: ${d.get("company") || "—"}`,
+      `Main challenge: ${challenge.selectedOptions[0].text}`,
+      `Ideal start: ${d.get("start")}`,
+      `Budget: ${d.get("budget") || "Not given"}`,
+      "",
+      "What we'd like to improve:",
+      d.get("improve"),
+    ].join("\n");
+    const subject = `Project enquiry from ${d.get("name")}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-form.addEventListener("input", (e) => {
-  if (e.target.getAttribute("aria-invalid") === "true" && e.target.checkValidity()) {
-    e.target.setAttribute("aria-invalid", "false");
-  }
-});
+    status.className = "form-status success";
+    status.innerHTML = `<strong>Almost done — your email app should now be open.</strong> Just press send. If nothing opened, email us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
+    status.focus();
+  });
+}
