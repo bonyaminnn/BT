@@ -5,265 +5,417 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bony + Taahzino — Product design &amp; development studio</title>
   <meta name="description" content="We help B2B software teams fix confusing workflows, redesign product experiences, and build the improvements into the software people use every day.">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 01 · Navigation -->
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="logo">Bony <span>+</span> Taahzino</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <a href="#top" class="wordmark">Bony <em>+</em> Taahzino</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
         <span></span><span></span>
       </button>
-      <nav id="nav-links" class="nav-links">
+      <nav id="nav-links" class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn-small">Discuss a product challenge</a>
+        <a href="#contact" class="btn btn-dark btn-sm">Discuss a product challenge</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
+  <main id="main">
+    <!-- 01 · Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal-group>
+          <p class="label" data-reveal>Product design &amp; development studio</p>
+          <h1 data-reveal>Make your software easier to use. <em>And easier to improve.</em></h1>
+          <p class="lead" data-reveal>We help B2B software teams fix confusing workflows, redesign product experiences, and build the improvements into the software people use every day.</p>
+          <div class="hero-actions" data-reveal>
+            <a href="#contact" class="btn btn-dark">Discuss a product challenge</a>
+            <a href="#work" class="btn btn-ghost">See our work</a>
+          </div>
+          <p class="micro" data-reveal>Design and development, working together from the first decision to the shipped improvement.</p>
+        </div>
+
+        <div class="hero-media">
+          <figure class="media media-hero" data-reveal-img>
+            <img src="assets/dashboard.svg" width="1200" height="1000" alt="Illustration of a product dashboard with metrics, a chart, and a data table">
+          </figure>
+          <figure class="media media-float" data-reveal-img>
+            <img src="assets/ux-review.svg" width="800" height="1000" alt="">
+          </figure>
+          <div class="hero-note" data-reveal>
+            <span>Review</span><i aria-hidden="true">→</i><span>Redesign</span><i aria-hidden="true">→</i><span>Build</span>
+          </div>
+        </div>
+      </div>
+
       <div class="container">
-        <p class="eyebrow">Product design &amp; development studio</p>
-        <h1>Make your software easier to use. <em>And easier to improve.</em></h1>
-        <p class="lead">We help B2B software teams fix confusing workflows, redesign product experiences, and build the improvements into the software people use every day.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn">Discuss a product challenge</a>
-          <a href="#work" class="link-arrow">See our work</a>
-        </div>
-        <p class="micro">Design and development, working together from the first decision to the shipped improvement.</p>
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="section">
-      <div class="container split">
-        <h2>Good software can still get in its own way.</h2>
-        <div class="prose">
-          <p>As products grow, workflows get complicated, interfaces become inconsistent, and important improvements keep slipping down the roadmap. Your team knows something needs to change, but finding the time and the right people to fix it is difficult.</p>
-          <p>We help you identify what matters, design a clearer experience, and turn the agreed solution into working software.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="section alt">
-      <div class="container">
-        <h2 class="section-title">From confusing workflow to shipped improvement.</h2>
-        <div class="grid-3">
-          <article class="step">
-            <span class="num">01</span>
-            <h3>Understand</h3>
-            <p>We review the current experience, understand the workflow, and identify the issues worth solving first.</p>
-          </article>
-          <article class="step">
-            <span class="num">02</span>
-            <h3>Redesign</h3>
-            <p>We map a clearer flow, design the interface, and prototype important interactions before development begins.</p>
-          </article>
-          <article class="step">
-            <span class="num">03</span>
-            <h3>Build</h3>
-            <p>We implement the agreed improvements, test the experience, and hand over work your team can maintain.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <div class="container">
-        <p class="eyebrow">Services</p>
-        <h2 class="section-title">Three ways to work with us.</h2>
-        <div class="offers">
-          <article class="offer">
-            <h3>Product UX review</h3>
-            <p>Understand what is getting in the way before committing to a redesign. We review one agreed workflow, identify usability issues, and prioritize improvements based on user needs and business context.</p>
-            <p class="receive"><strong>You receive:</strong> a focused review, prioritized findings, and a recommended scope for the next step.</p>
-          </article>
-          <article class="offer">
-            <h3>Design and build sprint</h3>
-            <p>Take a defined product improvement from idea to implementation. We align on the problem, design the experience, and build the agreed solution within a clear scope.</p>
-            <p class="receive"><strong>You receive:</strong> agreed design deliverables and implementation, with milestones, testing, and handover defined before the project starts.</p>
-          </article>
-          <article class="offer">
-            <h3>Ongoing product improvement</h3>
-            <p>Keep improving your product without restarting the vendor search for every feature. We support a planned stream of UX improvements, feature design, and development under a monthly agreement.</p>
-            <p class="receive"><strong>You receive:</strong> agreed monthly capacity, a prioritized backlog, regular communication, and visibility into what is being delivered.</p>
-          </article>
-        </div>
-
-        <div class="capabilities">
-          <h3>What we design and build</h3>
-          <ul>
-            <li><strong>Product design</strong> — user flows, UX/UI design, prototypes, and design systems for existing software.</li>
-            <li><strong>Product development</strong> — frontend implementation of new features and redesigned workflows.</li>
-            <li><strong>Website design &amp; development</strong> — clear, fast marketing sites for software products.</li>
-            <li><strong>Dashboards &amp; admin tools</strong> — tables, filters, and multi-step workflows people use every day.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHO IT'S FOR -->
-    <section class="section alt">
-      <div class="container split">
-        <div>
-          <h2>A good fit for teams building real software.</h2>
-          <p class="prose">We work best with B2B software teams that already have a product, real users, and a clear reason to improve an important part of the experience.</p>
-        </div>
-        <ul class="checklist">
-          <li>SaaS products with complex dashboards or workflows.</li>
-          <li>Teams preparing to ship a new feature.</li>
-          <li>Products that need a more consistent, usable interface.</li>
-          <li>Teams that need design and implementation to move together.</li>
+        <ul class="strip" aria-label="What we work on">
+          <li>Product UX review</li>
+          <li>Product design</li>
+          <li>Product development</li>
+          <li>Website design &amp; development</li>
+          <li>Dashboards &amp; admin tools</li>
         </ul>
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="section" id="process">
+    <!-- 02 · Brand promise & benefits -->
+    <section class="section section-warm">
       <div class="container">
-        <p class="eyebrow">How it works</p>
-        <h2 class="section-title">Small, focused engagements. Clear next steps.</h2>
-        <ol class="process">
-          <li>
-            <h3>Talk through the problem</h3>
-            <p>We learn how the product works today, where users or teams get stuck, and what a useful improvement would look like.</p>
-          </li>
-          <li>
-            <h3>Agree on a clear scope</h3>
-            <p>We define the workflow, deliverables, timeline, responsibilities, and budget before work begins.</p>
-          </li>
-          <li>
-            <h3>Design and ship</h3>
-            <p>We work with your team to deliver the agreed improvement and identify sensible next steps.</p>
-          </li>
-        </ol>
-        <a href="#contact" class="link-arrow">Tell us what needs improving</a>
+        <header class="section-head center" data-reveal-group>
+          <p class="label" data-reveal>Why teams call us</p>
+          <h2 data-reveal>Good software can still <em>get in its own way.</em></h2>
+          <p data-reveal>As products grow, workflows get complicated, interfaces become inconsistent, and important improvements keep slipping down the roadmap. Your team knows something needs to change, but finding the time and the right people to fix it is difficult.</p>
+          <p data-reveal>We help you identify what matters, design a clearer experience, and turn the agreed solution into working software.</p>
+        </header>
+
+        <div class="layered">
+          <figure class="media layered-a" data-reveal-img>
+            <img src="assets/flow-map.svg" width="1000" height="700" alt="Illustration of a user flow map with connected screens and a decision point">
+          </figure>
+          <figure class="media layered-b" data-reveal-img>
+            <img src="assets/design-system.svg" width="800" height="800" alt="Illustration of interface components: buttons, inputs, toggles, and colour swatches">
+          </figure>
+        </div>
+
+        <div class="benefits" data-reveal-group>
+          <article class="benefit" data-reveal>
+            <span class="benefit-num">01</span>
+            <h3>Understand</h3>
+            <p>We review the current experience, understand the workflow, and identify the issues worth solving first.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <span class="benefit-num">02</span>
+            <h3>Redesign</h3>
+            <p>We map a clearer flow, design the interface, and prototype important interactions before development begins.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <span class="benefit-num">03</span>
+            <h3>Build</h3>
+            <p>We implement the agreed improvements, test the experience, and hand over work your team can maintain.</p>
+          </article>
+        </div>
+        <p class="center" data-reveal><a href="#process" class="text-link">Explore how we work</a></p>
       </div>
     </section>
 
-    <!-- WORK -->
-    <section class="section alt" id="work">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2>Case studies, written honestly.</h2>
-        </div>
-        <div class="prose">
-          <p>We're preparing detailed case studies that show the context, the problem, our role, what we actually shipped, and the outcome — without inflated claims.</p>
-          <p>In the meantime, we're happy to walk you through relevant projects on a call.</p>
-          <a href="#contact" class="link-arrow">Ask to see our work</a>
+    <!-- 03 · Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head split-head" data-reveal-group>
+          <div>
+            <p class="label" data-reveal>Services</p>
+            <h2 data-reveal>From confusing workflow <em>to shipped improvement.</em></h2>
+          </div>
+          <p data-reveal>Three focused ways to work together — each with an agreed scope, clear deliverables, and the people doing the work in the room.</p>
+        </header>
+
+        <div class="cards" data-reveal-group>
+          <article class="card" data-reveal>
+            <figure class="media card-media"><img src="assets/ux-review.svg" width="800" height="1000" alt=""></figure>
+            <div class="card-body">
+              <p class="card-label">Offer 01</p>
+              <h3>Product UX review</h3>
+              <p>Understand what is getting in the way before committing to a redesign. We review one agreed workflow, identify usability issues, and prioritize improvements based on user needs and business context.</p>
+              <p class="card-receive"><strong>You receive</strong> a focused review, prioritized findings, and a recommended scope for the next step.</p>
+              <a href="#contact" class="text-link" data-challenge="UX / usability">Discuss a review</a>
+            </div>
+          </article>
+          <article class="card" data-reveal>
+            <figure class="media card-media"><img src="assets/flow-map.svg" width="1000" height="700" alt=""></figure>
+            <div class="card-body">
+              <p class="card-label">Offer 02</p>
+              <h3>Design and build sprint</h3>
+              <p>Take a defined product improvement from idea to implementation. We align on the problem, design the experience, and build the agreed solution within a clear scope.</p>
+              <p class="card-receive"><strong>You receive</strong> agreed design deliverables and implementation, with milestones, testing, and handover defined before the project starts.</p>
+              <a href="#contact" class="text-link" data-challenge="New feature">Discuss a sprint</a>
+            </div>
+          </article>
+          <article class="card" data-reveal>
+            <figure class="media card-media"><img src="assets/code-editor.svg" width="1000" height="700" alt=""></figure>
+            <div class="card-body">
+              <p class="card-label">Offer 03</p>
+              <h3>Ongoing product improvement</h3>
+              <p>Keep improving your product without restarting the vendor search for every feature. We support a planned stream of UX improvements, feature design, and development under a monthly agreement.</p>
+              <p class="card-receive"><strong>You receive</strong> agreed monthly capacity, a prioritized backlog, regular communication, and visibility into what is being delivered.</p>
+              <a href="#contact" class="text-link" data-challenge="Ongoing product capacity">Discuss ongoing work</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>A small team, close to the work.</h2>
+    <!-- 04 · Process (schedule-style panel) -->
+    <section class="section section-dark" id="process">
+      <div class="container process-grid">
+        <div class="process-intro" data-reveal-group>
+          <p class="label label-light" data-reveal>How it works</p>
+          <h2 data-reveal>Small, focused engagements. <em>Clear next steps.</em></h2>
+          <figure class="media process-media" data-reveal-img>
+            <img src="assets/code-editor.svg" width="1000" height="700" alt="Illustration of a code editor showing implementation work" >
+          </figure>
         </div>
-        <div>
-          <p class="prose">We're Bony and Taahzino. We bring product design and software development together to help teams improve the products they already rely on. You work directly with the people thinking through the experience and building the solution.</p>
-          <div class="founders">
-            <div class="founder">
-              <div class="avatar" aria-hidden="true">B</div>
-              <div><strong>Bony Amin</strong><span>Co-founder</span></div>
+
+        <div class="panel" data-reveal>
+          <div class="tabs" role="tablist" aria-label="Process details">
+            <button role="tab" id="tab-steps" aria-selected="true" aria-controls="panel-steps">The steps</button>
+            <button role="tab" id="tab-engagements" aria-selected="false" aria-controls="panel-engagements" tabindex="-1">Engagements</button>
+          </div>
+
+          <div role="tabpanel" id="panel-steps" aria-labelledby="tab-steps">
+            <div class="row">
+              <span class="row-meta">Step 1</span>
+              <div><h3>Talk through the problem</h3><p>We learn how the product works today, where users or teams get stuck, and what a useful improvement would look like.</p></div>
             </div>
-            <div class="founder">
-              <div class="avatar" aria-hidden="true">T</div>
-              <div><strong>Taahzino</strong><span>Co-founder</span></div>
+            <div class="row">
+              <span class="row-meta">Step 2</span>
+              <div><h3>Agree on a clear scope</h3><p>We define the workflow, deliverables, timeline, responsibilities, and budget before work begins.</p></div>
             </div>
+            <div class="row">
+              <span class="row-meta">Step 3</span>
+              <div><h3>Design and ship</h3><p>We work with your team to deliver the agreed improvement and identify sensible next steps.</p></div>
+            </div>
+            <a href="#contact" class="btn btn-dark">Tell us what needs improving</a>
+          </div>
+
+          <div role="tabpanel" id="panel-engagements" aria-labelledby="tab-engagements" hidden>
+            <div class="row">
+              <span class="row-meta">One workflow</span>
+              <div><h3>Product UX review</h3><p>Findings, prioritized recommendations, annotated screens or a workflow map, and a proposed next-step scope.</p></div>
+            </div>
+            <div class="row">
+              <span class="row-meta">Defined feature</span>
+              <div><h3>Design and build sprint</h3><p>User flows, UI designs, prototypes, frontend implementation, QA, and handover — depending on scope.</p></div>
+            </div>
+            <div class="row">
+              <span class="row-meta">Monthly</span>
+              <div><h3>Ongoing product improvement</h3><p>Agreed capacity, response times, included work, and a clear way to prioritize new requests.</p></div>
+            </div>
+            <p class="panel-note">Every engagement is priced on scope, complexity, and the people required. You get a defined proposal before work begins.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 05 · Gallery -->
+    <section class="section">
+      <div class="container">
+        <header class="section-head center" data-reveal-group>
+          <p class="label" data-reveal>Capabilities</p>
+          <h2 data-reveal>What we <em>design and build.</em></h2>
+        </header>
+        <div class="mosaic" data-reveal-group>
+          <figure class="tile tile-tall" data-reveal>
+            <div class="media"><img src="assets/website.svg" width="800" height="1000" alt=""></div>
+            <figcaption><strong>Website design &amp; development</strong>Clear, fast marketing sites for software products.</figcaption>
+          </figure>
+          <figure class="tile tile-wide" data-reveal>
+            <div class="media"><img src="assets/dashboard.svg" width="1200" height="1000" alt=""></div>
+            <figcaption><strong>Dashboards &amp; admin tools</strong>Tables, filters, and multi-step workflows people use every day.</figcaption>
+          </figure>
+          <figure class="tile" data-reveal>
+            <div class="media"><img src="assets/flow-map.svg" width="1000" height="700" alt=""></div>
+            <figcaption><strong>Product design</strong>User flows, UX/UI design, and prototypes.</figcaption>
+          </figure>
+          <figure class="tile" data-reveal>
+            <div class="media"><img src="assets/design-system.svg" width="800" height="800" alt=""></div>
+            <figcaption><strong>Design systems</strong>Consistent, reusable interface components.</figcaption>
+          </figure>
+          <figure class="tile tile-wide" data-reveal>
+            <div class="media"><img src="assets/code-editor.svg" width="1000" height="700" alt=""></div>
+            <figcaption><strong>Product development</strong>Frontend implementation of new features and redesigned workflows.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fit -->
+    <section class="section section-sand">
+      <div class="container fit">
+        <div data-reveal-group>
+          <p class="label" data-reveal>Who we work with</p>
+          <h2 data-reveal>A good fit for teams <em>building real software.</em></h2>
+          <p data-reveal>We work best with B2B software teams that already have a product, real users, and a clear reason to improve an important part of the experience.</p>
+        </div>
+        <ul class="checklist" data-reveal-group>
+          <li data-reveal>SaaS products with complex dashboards or workflows.</li>
+          <li data-reveal>Teams preparing to ship a new feature.</li>
+          <li data-reveal>Products that need a more consistent, usable interface.</li>
+          <li data-reveal>Teams that need design and implementation to move together.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 · About / story -->
+    <section class="section" id="about">
+      <div class="container story">
+        <div class="founders-visual" data-reveal-img>
+          <div class="founder-card">
+            <div class="portrait" aria-hidden="true">B</div>
+            <p><strong>Bony Amin</strong><span>Co-founder</span></p>
+          </div>
+          <div class="founder-card">
+            <div class="portrait" aria-hidden="true">T</div>
+            <p><strong>Taahzino</strong><span>Co-founder</span></p>
+          </div>
+        </div>
+        <div data-reveal-group>
+          <p class="label" data-reveal>About</p>
+          <blockquote data-reveal>
+            <p>“You work directly with the people thinking through the experience <em>and building the solution.</em>”</p>
+          </blockquote>
+          <hr class="divider" data-reveal>
+          <h2 class="h3" data-reveal>A small team, close to the work.</h2>
+          <p data-reveal>We're Bony and Taahzino. We bring product design and software development together to help teams improve the products they already rely on.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Work (editorial) -->
+    <section class="section section-warm" id="work">
+      <div class="container">
+        <header class="section-head split-head" data-reveal-group>
+          <div>
+            <p class="label" data-reveal>Selected work</p>
+            <h2 data-reveal>Case studies, <em>written honestly.</em></h2>
+          </div>
+          <p data-reveal>We're preparing case studies that show what we actually did and shipped — without inflated claims. In the meantime, we're happy to walk you through relevant projects on a call.</p>
+        </header>
+
+        <article class="feature" data-reveal>
+          <figure class="media feature-media" data-reveal-img>
+            <img src="assets/website.svg" width="800" height="1000" alt="">
+          </figure>
+          <div class="feature-body">
+            <p class="card-label">In preparation</p>
+            <h3>Every case study follows the same honest structure.</h3>
+            <ol class="outline">
+              <li><strong>Context</strong> — the product, who used it, and why it mattered.</li>
+              <li><strong>Problem</strong> — what was confusing, slow, or inconsistent.</li>
+              <li><strong>Our role</strong> — exactly what we owned.</li>
+              <li><strong>What shipped</strong> — real screens, flows, and code where permitted.</li>
+              <li><strong>Outcome</strong> — verified results, or a plain description of the change.</li>
+            </ol>
+            <a href="#contact" class="btn btn-dark">Ask to see our work</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="section alt" id="faq">
-      <div class="container narrow">
-        <p class="eyebrow">FAQ</p>
-        <h2 class="section-title">Common questions.</h2>
-        <details>
-          <summary>Do you only design, or can you build the solution too?</summary>
-          <p>We bring design and development together where the project scope and our technical capabilities are a fit. We agree on exactly what will be designed, built, tested, and handed over before work begins.</p>
-        </details>
-        <details>
-          <summary>Can you work with our in-house developers?</summary>
-          <p>Yes. We can collaborate with your team on design, implementation, specifications, or a clearly defined part of the product roadmap.</p>
-        </details>
-        <details>
-          <summary>Can you redesign our entire product?</summary>
-          <p>Potentially, but we recommend starting with the workflows and user needs that matter most. We'll assess the scope before recommending a phased approach.</p>
-        </details>
-        <details>
-          <summary>How do you price projects?</summary>
-          <p>Pricing depends on the problem, scope, complexity, timeline, and delivery responsibilities. We provide a defined proposal before work begins.</p>
-        </details>
-        <details>
-          <summary>Do you offer ongoing support?</summary>
-          <p>Yes, when there is a good fit. Monthly engagements can cover an agreed amount of product design and development, with priorities and capacity defined in advance.</p>
-        </details>
-        <details>
-          <summary>What do you need from us to get started?</summary>
-          <p>A product walkthrough, context about your users and goals, access to the relevant stakeholders, and agreement on the problem to solve.</p>
-        </details>
+    <section class="section" id="faq">
+      <div class="container faq">
+        <header data-reveal-group>
+          <p class="label" data-reveal>FAQ</p>
+          <h2 data-reveal>Common <em>questions.</em></h2>
+        </header>
+        <div class="accordion" data-reveal-group>
+          <details data-reveal>
+            <summary>Do you only design, or can you build the solution too?</summary>
+            <p>We bring design and development together where the project scope and our technical capabilities are a fit. We agree on exactly what will be designed, built, tested, and handed over before work begins.</p>
+          </details>
+          <details data-reveal>
+            <summary>Can you work with our in-house developers?</summary>
+            <p>Yes. We can collaborate with your team on design, implementation, specifications, or a clearly defined part of the product roadmap.</p>
+          </details>
+          <details data-reveal>
+            <summary>Can you redesign our entire product?</summary>
+            <p>Potentially, but we recommend starting with the workflows and user needs that matter most. We'll assess the scope before recommending a phased approach.</p>
+          </details>
+          <details data-reveal>
+            <summary>How do you price projects?</summary>
+            <p>Pricing depends on the problem, scope, complexity, timeline, and delivery responsibilities. We provide a defined proposal before work begins.</p>
+          </details>
+          <details data-reveal>
+            <summary>Do you offer ongoing support?</summary>
+            <p>Yes, when there is a good fit. Monthly engagements can cover an agreed amount of product design and development, with priorities and capacity defined in advance.</p>
+          </details>
+          <details data-reveal>
+            <summary>What do you need from us to get started?</summary>
+            <p>A product walkthrough, context about your users and goals, access to the relevant stakeholders, and agreement on the problem to solve.</p>
+          </details>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="container split">
-        <div>
-          <h2>What part of your product needs to work better?</h2>
-          <p class="prose">Tell us about the workflow, feature, or experience you want to improve. We'll discuss the problem and whether we're the right team to help.</p>
+    <!-- 08 · Closing CTA + contact -->
+    <section class="section section-tight" id="contact">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <div class="cta-copy">
+            <p class="label">Start a conversation</p>
+            <h2>What part of your product <em>needs to work better?</em></h2>
+            <p>Tell us about the workflow, feature, or experience you want to improve. We'll discuss the problem and whether we're the right team to help.</p>
+          </div>
+
+          <form class="form" id="contact-form" novalidate>
+            <h3>Tell us what you want to improve.</h3>
+            <p class="form-intro">Share a little about your product and the challenge. We'll review the details and get back to you about the next step.</p>
+            <div class="form-row">
+              <label>Name<input name="name" required autocomplete="name"></label>
+              <label>Work email<input name="email" type="email" required autocomplete="email"></label>
+            </div>
+            <label>Company and product URL<input name="company" placeholder="Acme — acme.com"></label>
+            <label>What would you like to improve?<textarea name="improve" rows="4" required></textarea></label>
+            <label>What is the main challenge?
+              <select name="challenge" id="challenge">
+                <option>UX / usability</option>
+                <option>New feature</option>
+                <option>Frontend implementation</option>
+                <option>Ongoing product capacity</option>
+                <option>Website design &amp; development</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <div class="form-row">
+              <label>When would you like to start?<input name="start" placeholder="e.g. next month"></label>
+              <label>Budget range <span class="optional">(optional)</span><input name="budget"></label>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-dark">Discuss my project</button>
+          </form>
         </div>
-        <form class="form" id="contact-form">
-          <h3>Tell us what you want to improve.</h3>
-          <p class="form-intro">Share a little about your product and the challenge. We'll review the details and get back to you about the next step.</p>
-          <div class="row">
-            <label>Name<input name="name" required autocomplete="name"></label>
-            <label>Work email<input name="email" type="email" required autocomplete="email"></label>
-          </div>
-          <label>Company and product URL<input name="company" placeholder="Acme — acme.com"></label>
-          <label>What would you like to improve?<textarea name="improve" rows="4" required></textarea></label>
-          <label>What is the main challenge?
-            <select name="challenge">
-              <option>UX / usability</option>
-              <option>New feature</option>
-              <option>Frontend implementation</option>
-              <option>Ongoing product capacity</option>
-              <option>Website design &amp; development</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-          <div class="row">
-            <label>When would you like to start?<input name="start" placeholder="e.g. next month"></label>
-            <label>Budget range <span class="optional">(optional)</span><input name="budget"></label>
-          </div>
-          <button type="submit" class="btn">Discuss my project</button>
-          <p class="confirm" id="confirm" hidden>Thanks for sharing the details. We'll review your message and get back to you if there's a good fit.</p>
-        </form>
       </div>
     </section>
   </main>
 
+  <!-- 09 · Footer -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <span class="logo">Bony <span>+</span> Taahzino</span>
-      <span>Better software experiences, designed and built.</span>
-      <span>&copy; <span id="year"></span></span>
+    <div class="container">
+      <div class="footer-top">
+        <p class="footer-statement">Better software experiences, <em>designed and built.</em></p>
+        <nav class="footer-links" aria-label="Footer">
+          <div>
+            <h4>Studio</h4>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#work">Work</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+      <p class="footer-mark" aria-hidden="true">Bony <em>+</em> Taahzino</p>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Bony + Taahzino</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
