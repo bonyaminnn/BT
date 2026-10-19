@@ -1,11 +1,22 @@
-const SITE = "https://bonyamin.com";
-const paths = ["", "/work", "/services", "/pricing", "/process", "/about", "/faq", "/journal", "/contact"];
+import { projects } from "@/content/projects";
+import { site } from "@/content/site";
+
+const SITE = site.domain;
 
 export default function sitemap() {
-  return paths.map((p) => ({
-    url: `${SITE}${p}`,
-    lastModified: new Date(),
-    changeFrequency: p === "" ? "weekly" : "monthly",
-    priority: p === "" ? 1 : 0.7,
-  }));
+  const pages = ["", "/work", "/about"];
+  return [
+    ...pages.map((path) => ({
+      url: `${SITE}${path}`,
+      lastModified: new Date(),
+      changeFrequency: path === "" ? "weekly" : "monthly",
+      priority: path === "" ? 1 : 0.8,
+    })),
+    ...projects.map((p) => ({
+      url: `${SITE}/work/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })),
+  ];
 }

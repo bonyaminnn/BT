@@ -1,101 +1,11 @@
 import Slot from "@/components/Slot";
 import IconSlot from "@/components/IconSlot";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import { Section, Eyebrow, Button, Tag } from "@/components/ui";
 import { faqs } from "@/content/faqs";
+import { projects } from "@/content/projects";
 import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
-
-/* ---------------------------------------------------------------- primitives */
-
-function Section({ id, label, children, className = "" }) {
-  return (
-    <section
-      id={id}
-      aria-label={label}
-      className={`border-t border-g200 px-5 py-20 sm:px-8 md:py-28 ${className}`}
-    >
-      <div className="mx-auto w-full max-w-6xl">{children}</div>
-    </section>
-  );
-}
-
-function Eyebrow({ children }) {
-  return (
-    <p className="font-mono text-[11px] font-semibold tracking-[0.18em] text-g500 uppercase">
-      {children}
-    </p>
-  );
-}
-
-function Button({ href, children, variant = "solid", download = false }) {
-  const styles =
-    variant === "solid"
-      ? "bg-ink text-paper hover:bg-g700"
-      : "border border-g400 text-ink hover:border-ink";
-  return (
-    <a
-      href={href}
-      download={download || undefined}
-      className={`inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[15px] font-medium transition-colors ${styles}`}
-    >
-      {children}
-    </a>
-  );
-}
-
-/** Shipped vs. concept. The IA requires production work be distinguishable from
- *  independent explorations, so the distinction is a visible tag, not a footnote. */
-function Tag({ kind }) {
-  const shipped = kind === "shipped";
-  return (
-    <span
-      className={`rounded-sm border px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] uppercase ${
-        shipped ? "border-ink text-ink" : "border-g400 text-g500"
-      }`}
-    >
-      {shipped ? "Shipped product" : "Self-directed redesign"}
-    </span>
-  );
-}
-
-/* ------------------------------------------------------------------ 1. nav */
-
-function Navigation() {
-  const links = [
-    ["Work", "#work"],
-    ["Services", "#services"],
-    ["About", "#about"],
-    ["Testimonials", "#testimonials"],
-  ];
-  return (
-    <header className="sticky top-0 z-40 border-b border-g200 bg-paper/90 backdrop-blur">
-      <nav
-        aria-label="Primary"
-        className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
-      >
-        <a href="#main" className="text-[15px] font-semibold tracking-tight">
-          {site.name}
-          <span className="ml-2 hidden font-mono text-[10px] font-normal tracking-[0.14em] text-g500 uppercase sm:inline">
-            {site.role}
-          </span>
-        </a>
-        <ul className="hidden items-center gap-8 md:flex">
-          {links.map(([label, href]) => (
-            <li key={href}>
-              <a href={href} className="text-sm text-g600 hover:text-ink">
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="#contact"
-          className="rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-paper hover:bg-g700"
-        >
-          Get in touch
-        </a>
-      </nav>
-    </header>
-  );
-}
 
 /* ----------------------------------------------------------------- 2. hero */
 
@@ -179,51 +89,6 @@ function Credibility() {
 
 /* ------------------------------------------------------------ 4. selected work */
 
-const work = [
-  {
-    name: "TL Ops — Challan Workflow",
-    category: "Enterprise UX · Logistics · Workflow design",
-    headline: "Making operational workflows easier to manage",
-    body: "I worked on digitising the challan submission and review process in TL Ops, bringing an operational paper workflow into a structured digital experience — mapping the existing process, designing the interaction, and working through implementation with the team.",
-    kind: "shipped",
-    slot: {
-      id: "WORK-01",
-      type: "product shot",
-      ratio: "16:10",
-      description: "TL Ops challan submission and review interface — the main workflow screen, real UI, annotated if confidentiality allows.",
-      path: "/public/assets/work-01-tlops.webp",
-    },
-  },
-  {
-    name: "Truck Lagbe — Home Shifting",
-    category: "Transportation · Service design · Mobile UX",
-    headline: "Bringing a new service into an existing platform",
-    body: "I worked on integrating a home-shifting service into the Truck Lagbe app, connecting service discovery to the booking experience without disrupting the flows that existing users already relied on.",
-    kind: "shipped",
-    slot: {
-      id: "WORK-02",
-      type: "product shot",
-      ratio: "16:10",
-      description: "Truck Lagbe home-shifting screens — service discovery into booking, two or three mobile frames side by side.",
-      path: "/public/assets/work-02-trucklagbe.webp",
-    },
-  },
-  {
-    name: "Shohoz — Bus Booking Redesign",
-    category: "Travel · Interaction design · Mobile UX",
-    headline: "Making the booking journey easier to understand",
-    body: "A self-directed redesign exploring journey clarity, seat selection, visual hierarchy and accessibility in the bus-ticket booking experience — a UX audit first, then the interface changes that followed from it.",
-    kind: "concept",
-    slot: {
-      id: "WORK-03",
-      type: "product shot",
-      ratio: "16:10",
-      description: "Shohoz redesign — the seat-selection interaction, before and after, as mobile frames.",
-      path: "/public/assets/work-03-shohoz.webp",
-    },
-  },
-];
-
 function Work() {
   return (
     <Section id="work" label="Selected work">
@@ -240,7 +105,7 @@ function Work() {
       </div>
 
       <ul className="mt-12 space-y-16 md:space-y-24">
-        {work.map((p, i) => (
+        {projects.map((p, i) => (
           <li key={p.name} className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
             <Slot
               {...p.slot}
@@ -259,7 +124,7 @@ function Work() {
               <p className="mt-2 text-[17px] font-medium text-g700">{p.headline}</p>
               <p className="mt-4 text-[16px] leading-relaxed text-g600">{p.body}</p>
               <a
-                href="/work"
+                href={`/work/${p.slug}`}
                 className="mt-6 inline-block text-[15px] underline underline-offset-4 hover:text-g600"
               >
                 Explore case study
@@ -589,69 +454,12 @@ function Contact() {
   );
 }
 
-/* ---------------------------------------------------------------- 11. footer */
-
-function Footer() {
-  const cols = [
-    ["Site", [["Work", "#work"], ["Services", "#services"], ["About", "#about"], ["Testimonials", "#testimonials"]]],
-    ["Elsewhere", [["Résumé", "/resume.pdf"], ["LinkedIn", "https://linkedin.com/in/"], ["GitHub", "https://github.com/"]]],
-  ];
-  return (
-    <footer className="border-t border-g200 px-5 pt-20 pb-10 sm:px-8">
-      <div className="mx-auto w-full max-w-6xl">
-        <Slot
-          id="FOOTER-SCENE"
-          type="illustration"
-          ratio="16:5"
-          description="Wide closing scene: a desk at the end of the day, screen dark, notebook open — line-and-wash, matching the spot illustrations."
-          path="/public/assets/footer-scene.webp"
-        />
-
-        <div className="mt-14 grid gap-10 md:grid-cols-[1.4fr_repeat(2,1fr)]">
-          <div>
-            <p className="text-[15px] font-semibold tracking-tight">{site.name}</p>
-            <p className="mt-1 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">
-              {site.role}
-            </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-4 inline-block text-[15px] underline underline-offset-4 hover:text-g600"
-            >
-              {site.email}
-            </a>
-          </div>
-          {cols.map(([title, links]) => (
-            <nav key={title} aria-label={title}>
-              <p className="font-mono text-[10px] tracking-[0.14em] text-g500 uppercase">
-                {title}
-              </p>
-              <ul className="mt-4 space-y-2.5">
-                {links.map(([label, href]) => (
-                  <li key={label}>
-                    <a href={href} className="text-[15px] text-g600 hover:text-ink">
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
-        </div>
-
-        <p className="mt-14 border-t border-g200 pt-6 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-          © {new Date().getFullYear()} {site.name}. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
-}
-
 /* ---------------------------------------------------------------- the page */
 
 export default function Home() {
   return (
     <>
-      <Navigation />
+      <SiteHeader />
       <main id="main">
         <Hero />
         <Credibility />
@@ -663,7 +471,7 @@ export default function Home() {
         <About />
         <Contact />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }
