@@ -25,7 +25,7 @@ function Eyebrow({ children }) {
   );
 }
 
-function Button({ href, children, variant = "solid" }) {
+function Button({ href, children, variant = "solid", download = false }) {
   const styles =
     variant === "solid"
       ? "bg-ink text-paper hover:bg-g700"
@@ -33,6 +33,7 @@ function Button({ href, children, variant = "solid" }) {
   return (
     <a
       href={href}
+      download={download || undefined}
       className={`inline-flex items-center justify-center rounded-sm px-6 py-3.5 text-[15px] font-medium transition-colors ${styles}`}
     >
       {children}
@@ -115,9 +116,9 @@ function Hero() {
             workflows into intuitive, polished, working software.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="#work">Explore my work</Button>
-            <Button href="#contact" variant="outline">
-              Let&rsquo;s work together
+            <Button href="#work">See my work</Button>
+            <Button href="/resume.pdf" variant="outline" download>
+              Download résumé
             </Button>
           </div>
           <p className="mt-7 font-mono text-[11px] tracking-[0.12em] text-g500 uppercase">
@@ -551,8 +552,8 @@ function Contact() {
         </p>
         <div className="mt-9 flex flex-wrap items-center gap-4">
           <Button href={`mailto:${site.email}`}>Get in touch</Button>
-          <Button href="/resume.pdf" variant="outline">
-            View my résumé
+          <Button href="/resume.pdf" variant="outline" download>
+            Download résumé
           </Button>
         </div>
         <p className="mt-6 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">

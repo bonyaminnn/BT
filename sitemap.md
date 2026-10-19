@@ -42,9 +42,9 @@ budget: **the hero alone must work in 5 seconds, and the three key messages must
 within 3 scrolls.**
 
 1. **Navigation** — name and role, four links, one CTA. Sticky.
-2. **Hero** — eyebrow, headline, one supporting line, two CTAs ("Explore my work"
-   primary, "Let's work together" secondary), the expertise line, and a wide **real
-   product interface** rather than an illustration. *(Scroll 1)*
+2. **Hero** — eyebrow, headline, one supporting line, two CTAs ("See my work" primary,
+   "Download résumé" secondary), the expertise line, and a wide **real product
+   interface** rather than an illustration. *(Scroll 1)*
 3. **Credibility** — four facts: years, domains, who I work with, focus. Plus an
    optional logo row. Backs the hero claim immediately. *(Scroll 1–2)*
 4. **Selected work** — three projects, alternating image and text, each tagged *Shipped
