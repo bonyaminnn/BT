@@ -1,0 +1,32 @@
+{
+  "name": "bony-amin-portfolio",
+  "version": "0.1.0",
+  "description": "Static site (HTML, CSS, vanilla JS). No build step: open `index.html`, or deploy the folder to any static host (GitHub Pages, Netlify, Vercel).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonyaminnn/BT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bonyaminnn/BT/issues"
+  },
+  "homepage": "https://github.com/bonyaminnn/BT#readme",
+  "dependencies": {
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "tailwindcss": "^4.1.14"
+  },
+  "private": true
+}

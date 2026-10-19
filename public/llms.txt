@@ -1,0 +1,43 @@
+# Bony Amin
+
+> A two-person design engineering studio. One senior designer and one senior engineer
+> design, build and ship websites, web applications and digital products end to end —
+> with no agency hand-offs, no translation loss between design and code, and no queue.
+
+## Who it is for
+Businesses that already have a product or website, or want to build a new one entirely.
+Founders, product leads and marketing owners commissioning a build.
+
+## What makes it different
+Two senior people, both hands-on, covering the whole job from first sketch to live site.
+Fixed price against fixed scope before work starts. The client owns every design file,
+repository and account from day one. No proprietary CMS and no lock-in.
+
+## Services
+- Marketing and product websites
+- Web applications
+- Design systems
+- Redesign and rebuild of existing products
+- Design and engineering audits
+- Ongoing monthly design and development support
+
+## Engagements
+- Launch — from $6,000, 2 to 3 weeks, a focused site of up to six pages.
+- Product — $14,000 to $30,000, 4 to 8 weeks, a full product site or web application.
+- Standing seat — from $3,500 per month, no minimum term, ongoing senior time.
+
+## Working practice
+Asynchronous by default with a weekly live call. Replies within one business day. One or
+two projects at a time. Thirty days of post-launch support included with every project.
+
+## Key pages
+- / — homepage: positioning, selected work, services, plans, FAQ
+- /work — full project index
+- /services — services and what each engagement includes
+- /pricing — price bands and engagement models
+- /process — named stages, durations and deliverables
+- /faq — answers to common questions
+- /contact — start a project
+
+## Contact
+hello@bonyamin.com

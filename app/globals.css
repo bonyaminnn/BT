@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+
+  /* Wireframe grayscale ramp only — no brand colour yet. */
+  --color-paper: #ffffff;
+  --color-ink: #000000;
+  --color-g50: #fafafa;
+  --color-g100: #f4f4f4;
+  --color-g200: #e6e6e6;
+  --color-g300: #d4d4d4;
+  --color-g400: #a3a3a3;
+  --color-g500: #737373;
+  --color-g600: #525252;
+  --color-g700: #3f3f3f;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-g200);
+}
