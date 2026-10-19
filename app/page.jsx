@@ -45,7 +45,7 @@ function Navigation() {
   const links = [
     ["Work", "#work"],
     ["Services", "#services"],
-    ["Pricing", "#plans"],
+    ["Process", "#process"],
     ["About", "#statement"],
   ];
   return (
@@ -87,13 +87,14 @@ function Hero() {
     <section aria-label="Introduction" className="px-5 pt-16 pb-12 sm:px-8 md:pt-24">
       <div className="mx-auto w-full max-w-6xl">
         <div className="max-w-3xl">
-          <Eyebrow>Design engineering studio · two people</Eyebrow>
+          <Eyebrow>Bony Amin · design engineer</Eyebrow>
           <h1 className="mt-5 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
-            We design and build your website, app and product — end to end.
+            I design and build digital products — end to end.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
-            One senior designer, one senior engineer. Same two hands from first sketch
-            to live site, so nothing gets lost between design and code.
+            A design engineer who does both halves of the job. I help founders and
+            companies build what&rsquo;s new, modify what no longer fits, and enhance
+            what already works.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button href="#contact">Start a project</Button>
@@ -108,7 +109,7 @@ function Hero() {
           id="HERO-SCENE"
           type="illustration"
           ratio="16:6"
-          description="Wide view of the two-desk workshop at morning light — two desks pushed together, one with a sketchbook, one with a screen mid-layout, tall windows onto rooftops."
+          description="Wide view of the workbench in morning light — one long bench with a sketchbook at one end and a screen mid-layout at the other, tall windows onto rooftops."
           path="/public/assets/hero-scene.webp"
         />
       </div>
@@ -148,15 +149,15 @@ function TrustStrip() {
 
 function Statement() {
   return (
-    <Section id="statement" label="How we work" className="border-t-0">
+    <Section id="statement" label="How I work" className="border-t-0">
       <div className="max-w-4xl">
-        <Eyebrow>Why two people</Eyebrow>
+        <Eyebrow>Why one design engineer</Eyebrow>
         <p className="mt-6 text-2xl leading-[1.35] font-medium tracking-tight text-pretty sm:text-3xl md:text-4xl">
-          Most studios lose weeks in the gap between the designer, the developer and the
-          person who manages both. We removed the gap. There are two seats in this
-          studio and both of them are senior, so decisions happen in the same
-          conversation as the work — and you get studio-grade craft at maker-grade
-          speed.
+          Most projects lose their weeks in the gap between the designer, the developer
+          and the person managing both. I removed the gap by doing both halves myself,
+          so decisions happen in the same hour as the work. And you don&rsquo;t have to
+          start over to hire me — I&rsquo;ll build something new, refit what you have,
+          or sharpen what already earns.
         </p>
       </div>
     </Section>
@@ -167,46 +168,52 @@ function Statement() {
 
 const features = [
   {
-    eyebrow: "01 — Design",
-    title: "Design that argues for your price",
-    body: "We start with what your product has to prove, not with a moodboard. Then we design the interface, the type, the motion and the words together, because a visitor decides what you are worth in about five seconds and every one of those choices is doing the talking.",
-    slot: {
-      id: "FEATURE-DESIGN",
-      type: "illustration",
-      ratio: "4:3",
-      description: "Corner of the workshop: a drafting desk seen from above, layout sketches fanned out, a pencil stub and a calliper resting on a grid.",
-      path: "/public/assets/feature-design.webp",
-    },
-  },
-  {
-    eyebrow: "02 — Build",
-    title: "Built by the person who designed it",
-    body: "No hand-off document, no translation loss, no “that isn’t technically possible” three weeks in. The design is built on modern, standard foundations — fast, accessible, responsive, and typed — by the same team that drew it.",
+    eyebrow: "01 — Build",
+    title: "Build something new, properly, the first time",
+    body: "A new site, product or application from nothing. I start with what it has to prove rather than a moodboard, then design and engineer it together — interface, type, motion and words — because a visitor decides what you are worth in about five seconds and every one of those choices is doing the talking.",
     slot: {
       id: "FEATURE-BUILD",
       type: "illustration",
       ratio: "4:3",
-      description: "The second desk: a screen showing a half-built interface beside a keyboard, a wall of pinned wireframes behind, cables tidy along the desk edge.",
+      description: "The drawing end of the bench seen from above: fresh grid paper, loose layout sketches fanned out, a pencil stub and a calliper resting on the grid.",
       path: "/public/assets/feature-build.webp",
     },
   },
   {
-    eyebrow: "03 — Ship",
-    title: "Shipped, handed over, still supported",
-    body: "We launch it, measure it, and give you every file, repo and account. Thirty days of post-launch support comes with every project. After that you keep us on a monthly retainer or take it in-house — both are fine, and neither costs you leverage.",
+    eyebrow: "02 — Modify",
+    title: "Refit what you have instead of starting over",
+    body: "Most products do not need demolishing — they need the parts that no longer fit replaced. I work inside your existing stack, brand and half-finished build, so a redesign or rebuild costs you a refit rather than a restart. If a smaller change gets you there, I will tell you that instead.",
     slot: {
-      id: "FEATURE-SHIP",
+      id: "FEATURE-MODIFY",
       type: "illustration",
       ratio: "4:3",
-      description: "A paper aeroplane leaving the open workshop window at dusk, rooftops beyond, a plan chest with labelled drawers below the sill.",
-      path: "/public/assets/feature-ship.webp",
+      description: "The middle of the bench: a partly dismantled wooden frame with one new piece being fitted into it, old piece set aside, screwdriver and clamp in reach.",
+      path: "/public/assets/feature-modify.webp",
+    },
+  },
+  {
+    eyebrow: "03 — Enhance",
+    title: "Make what already works noticeably better",
+    body: "The product earns, but it is slow, dated, or quietly leaking conversions. I measure it, fix the real causes, and leave it faster and more accessible than it was — then hand you every file and repository. Thirty days of post-launch support comes with every project.",
+    slot: {
+      id: "FEATURE-ENHANCE",
+      type: "illustration",
+      ratio: "4:3",
+      description: "The build end of the bench at work: a screen showing a half-built interface, a small oil can and a whetstone beside the keyboard, pinned wireframes on the wall behind.",
+      path: "/public/assets/feature-enhance.webp",
     },
   },
 ];
 
 function Features() {
   return (
-    <Section id="process" label="What we do, stage by stage">
+    <Section id="process" label="The three jobs I take">
+      <div className="mb-16 max-w-2xl md:mb-20">
+        <Eyebrow>Build · modify · enhance</Eyebrow>
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+          Three jobs, depending on where your product already is.
+        </h2>
+      </div>
       <div className="space-y-20 md:space-y-28">
         {features.map((f, i) => (
           <div
@@ -238,36 +245,36 @@ const work = [
   {
     name: "Fieldnote",
     kind: "B2B SaaS · site and product UI",
-    result: "Rebuilt the marketing site and app shell in five weeks. Trial sign-ups up, support tickets about navigation gone.",
+    result: "Designed and rebuilt the marketing site and app shell in five weeks. Trial sign-ups up, support tickets about navigation gone.",
     slot: {
       id: "WORK-01",
       type: "product shot",
       ratio: "16:10",
-      description: "Hand-painted workshop screen mock: a SaaS marketing page on a monitor standing on the drafting desk, paper and pencil beside it.",
+      description: "Painted screen mock: a SaaS marketing page on the monitor at the build end of the bench, paper and pencil beside it.",
       path: "/public/assets/work-01-fieldnote.webp",
     },
   },
   {
     name: "Harbour & Co",
     kind: "Professional services · new site",
-    result: "Took a firm from a template site to a brand their enquiry form could charge for. Live in under three weeks.",
+    result: "Took a firm from a template site to a brand its enquiry form could charge for. Live in under three weeks.",
     slot: {
       id: "WORK-02",
       type: "product shot",
       ratio: "16:10",
-      description: "Painted mock of a premium services homepage pinned to the workshop wall beside a swatch of type specimens.",
+      description: "Painted mock of a premium services homepage pinned to the wall above the bench beside a swatch of type specimens.",
       path: "/public/assets/work-02-harbour.webp",
     },
   },
   {
     name: "Loomwork",
     kind: "Marketplace · design system",
-    result: "One component library replacing four inconsistent front-ends, so their team now ships pages without us.",
+    result: "One component library replacing four inconsistent front-ends, so their own team now ships pages without me.",
     slot: {
       id: "WORK-03",
       type: "product shot",
       ratio: "16:10",
-      description: "Painted shelf of labelled boxes and modular wooden blocks on the workshop shelf, standing in for a component library.",
+      description: "Painted shelf above the bench: labelled boxes and modular wooden blocks that clearly fit together, standing in for a component library.",
       path: "/public/assets/work-03-loomwork.webp",
     },
   },
@@ -292,7 +299,7 @@ function Work() {
         <div>
           <Eyebrow>Selected work (04)</Eyebrow>
           <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-            Have we built something like what you need? Probably.
+            Have I built something like what you need? Probably.
           </h2>
         </div>
         <a href="/work" className="text-[15px] text-g600 underline underline-offset-4 hover:text-ink">
@@ -328,12 +335,12 @@ const services = [
   },
   {
     name: "Web applications",
-    body: "Interfaces people use every day, designed and engineered as one job.",
+    body: "Interfaces people use daily, designed and engineered as one job.",
     icon: { id: "ICON-APP", description: "Painted spot icon: a small hinged wooden toolbox, open.", path: "/public/assets/icon-app.webp" },
   },
   {
     name: "Design systems",
-    body: "A component library your own team can ship pages with.",
+    body: "A component library your own team can ship pages with, without me.",
     icon: { id: "ICON-SYSTEM", description: "Painted spot icon: three modular wooden blocks stacked.", path: "/public/assets/icon-system.webp" },
   },
   {
@@ -342,8 +349,8 @@ const services = [
     icon: { id: "ICON-REBUILD", description: "Painted spot icon: a plane shaving a curl from a timber edge.", path: "/public/assets/icon-rebuild.webp" },
   },
   {
-    name: "Design and engineering audits",
-    body: "A short, blunt read on what is costing you conversions or speed.",
+    name: "Audits and enhancement",
+    body: "A short, blunt read on what is costing you conversions or speed — then the fix.",
     icon: { id: "ICON-AUDIT", description: "Painted spot icon: a brass calliper measuring a sheet of paper.", path: "/public/assets/icon-audit.webp" },
   },
   {
@@ -391,32 +398,31 @@ function Breather() {
           tone="quiet"
         />
         <p className="mt-8 text-xl leading-relaxed font-medium tracking-tight text-pretty sm:text-2xl">
-          We take one or two projects at a time. That is not a limitation — it is the
-          whole reason the work is good and the timeline is real.
+          I take one or two projects at a time. That is not a limitation — it is the
+          whole reason the work is good and the date I give you is real.
         </p>
       </div>
     </Section>
   );
 }
 
-/* ------------------------------------------------------------ 9. plans */
+/* ------------------------------------------------------ 9. engagements */
 
-const plans = [
+const engagements = [
   {
-    name: "Launch",
+    name: "Focused project",
     price: "From $6,000",
     timing: "2–3 weeks",
-    for: "A focused site that has to look like the tier you charge at.",
+    for: "A site or landing experience that has to look like the tier you charge at.",
     includes: [
-      "Up to 6 designed and built pages",
+      "Up to 6 pages, designed and built",
       "Copy direction and content structure",
-      "CMS so you can edit it yourself",
+      "A CMS so you can edit it yourself",
       "Performance and accessibility pass",
-      "30 days post-launch support",
     ],
   },
   {
-    name: "Product",
+    name: "Product build",
     price: "$14,000 – $30,000",
     timing: "4–8 weeks",
     for: "A full product site or web application, designed and engineered together.",
@@ -425,74 +431,80 @@ const plans = [
       "Full design system and UI build",
       "Application front-end engineering",
       "Analytics and launch support",
-      "30 days post-launch support",
     ],
     featured: true,
   },
   {
+    name: "Enhance or audit",
+    price: "From $2,500",
+    timing: "About a week",
+    for: "Something that already works but is slow, dated or leaking conversions.",
+    includes: [
+      "Measured read on what is actually wrong",
+      "The fixes, not just the findings",
+      "Speed and accessibility improvements",
+      "A written handover of what changed",
+    ],
+  },
+  {
     name: "Standing seat",
     price: "From $3,500 / month",
-    timing: "Monthly, cancel any time",
-    for: "A design engineering team on call for whatever ships next.",
+    timing: "Monthly, no minimum term",
+    for: "A design engineer on call for whatever ships next.",
     includes: [
-      "A set amount of senior time each month",
-      "Design and engineering from one team",
+      "A set amount of senior time monthly",
+      "Design and engineering from one person",
       "Weekly call, async the rest of the week",
       "Priority on fixes and releases",
-      "No minimum term",
     ],
   },
 ];
 
-function Plans() {
+function Engagements() {
   return (
-    <Section id="plans" label="Plans and pricing">
+    <Section id="engagements" label="Ways of working together">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Eyebrow>Plans</Eyebrow>
+          <Eyebrow>Working together</Eyebrow>
           <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-            Prices on the page, so you can decide before you email us.
+            Four ways in, with the numbers on the page.
           </h2>
         </div>
         <p className="max-w-xs text-[15px] text-g600">
           Every project is quoted at a fixed price against a fixed scope before any work
-          starts.
+          starts. The number you agree is the number you pay.
         </p>
       </div>
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-3">
-        {plans.map((p) => (
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {engagements.map((e) => (
           <div
-            key={p.name}
-            className={`flex flex-col rounded-sm border p-7 ${
-              p.featured ? "border-ink bg-g50" : "border-g200"
+            key={e.name}
+            className={`flex flex-col rounded-sm border p-6 ${
+              e.featured ? "border-ink bg-g50" : "border-g200"
             }`}
           >
-            <div className="flex items-baseline justify-between">
-              <h3 className="text-lg font-semibold tracking-tight">{p.name}</h3>
-              {p.featured && (
-                <span className="font-mono text-[10px] tracking-[0.14em] text-g500 uppercase">
-                  most asked for
-                </span>
-              )}
-            </div>
-            <p className="mt-4 text-xl font-medium tracking-tight">{p.price}</p>
+            <h3 className="text-[17px] font-semibold tracking-tight">{e.name}</h3>
+            <p className="mt-3 text-lg font-medium tracking-tight">{e.price}</p>
             <p className="mt-1 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-              {p.timing}
+              {e.timing}
             </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-g600">{p.for}</p>
-            <ul className="mt-6 space-y-2.5 border-t border-g200 pt-6 text-[15px] text-g600">
-              {p.includes.map((item) => (
+            <p className="mt-4 text-[15px] leading-relaxed text-g600">{e.for}</p>
+            <ul className="mt-5 space-y-2.5 border-t border-g200 pt-5 text-[15px] text-g600">
+              {e.includes.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-g400" />
                   {item}
                 </li>
               ))}
             </ul>
-            <div className="mt-8 pt-2">
-              <Button href="#contact" variant={p.featured ? "solid" : "outline"}>
-                Start a project
-              </Button>
+            <div className="mt-auto pt-7">
+              <a
+                href="#contact"
+                className="text-[15px] underline underline-offset-4 hover:text-g600"
+              >
+                Start here
+              </a>
             </div>
           </div>
         ))}
@@ -500,19 +512,20 @@ function Plans() {
 
       <div className="mt-10 flex flex-col gap-6 border-t border-g200 pt-8 md:flex-row md:items-center">
         <Slot
-          id="PLANS-SPOT"
+          id="HANDOVER-SPOT"
           type="illustration"
           ratio="2:1"
-          description="Spot scene: a brass key and a signed handover note resting on a labelled flat-file drawer — the you-own-everything promise."
-          path="/public/assets/plans-spot.webp"
+          description="Spot scene: a brass key and a signed handover note resting on a labelled flat-file drawer under the bench — the you-own-everything promise."
+          path="/public/assets/handover-spot.webp"
           className="w-full md:w-64 md:shrink-0"
           tone="quiet"
         />
         <p className="text-[15px] leading-relaxed text-g600">
           <strong className="font-semibold text-ink">You own everything.</strong> Every
-          Figma file, repository and account is yours from day one. We build on standard,
-          widely used technology — no proprietary CMS, no lock-in, and any team can pick
-          the work up after us.
+          Figma file, repository and account is yours from day one. I build on standard,
+          widely used technology — no proprietary CMS, no lock-in — so you or any team
+          you hire later can pick the work up without me. Thirty days of post-launch
+          support is included either way.
         </p>
       </div>
     </Section>
@@ -524,7 +537,7 @@ function Plans() {
 const quotes = [
   {
     quote:
-      "We had been quoted twice as much by an agency that wanted twice as long. Two people did it in five weeks and I spoke to the person building it every single time.",
+      "We had been quoted twice as much by an agency that wanted twice as long. Bony did it in five weeks, and the person I spoke to was the person building it, every single time.",
     name: "Operations lead",
     role: "B2B SaaS platform",
     slot: {
@@ -537,14 +550,14 @@ const quotes = [
   },
   {
     quote:
-      "The difference is that the designer was the developer. Nothing got watered down on the way to the build, and nothing came back as impossible.",
+      "The difference is that the designer was the developer. Nothing got watered down on the way to the build, and nothing came back three weeks later as impossible.",
     name: "Founder",
     role: "Professional services firm",
     slot: {
       id: "TESTIMONIAL-SPOT-02",
       type: "illustration",
       ratio: "1:1",
-      description: "Small painted spot: two mugs on a windowsill beside a folded drawing — the weekly call, drawn as objects.",
+      description: "Small painted spot: two mugs on the windowsill beside a folded drawing — the weekly call, drawn as objects.",
       path: "/public/assets/testimonial-spot-02.webp",
     },
   },
@@ -582,7 +595,7 @@ function Faq() {
         <div>
           <Eyebrow>Questions</Eyebrow>
           <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-            The things people ask before they email.
+            The things people ask before they email me.
           </h2>
           <Slot
             id="FAQ-SPOT"
@@ -624,12 +637,12 @@ function ClosingCta() {
     <Section id="contact" label="Start a project" className="bg-g50">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Tell us what you are building. We will tell you what it takes.
+          Tell me what you are building. I will tell you what it takes.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-g600">
           Send a couple of lines about the product and the deadline. You will get a real
-          reply from one of the two of us within one business day — a scope, a price band
-          and a start date, or an honest no.
+          reply from me within one business day — a scope, a price band and a start
+          date, or an honest no.
         </p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
           <Button href="mailto:hello@bonyamin.com">Start a project</Button>
@@ -649,8 +662,8 @@ function ClosingCta() {
 
 function Footer() {
   const cols = [
-    ["Studio", [["Work", "/work"], ["Services", "/services"], ["Process", "/process"], ["About", "/about"]]],
-    ["Buy", [["Plans & pricing", "/pricing"], ["FAQ", "/faq"], ["Start a project", "/contact"]]],
+    ["Practice", [["Work", "/work"], ["Services", "/services"], ["Process", "/process"], ["About", "/about"]]],
+    ["Buy", [["Engagement & pricing", "/pricing"], ["FAQ", "/faq"], ["Start a project", "/contact"]]],
     ["More", [["Journal", "/journal"], ["Privacy", "/privacy"], ["Terms", "/terms"]]],
   ];
   return (
@@ -660,7 +673,7 @@ function Footer() {
           id="FOOTER-SCENE"
           type="illustration"
           ratio="16:5"
-          description="Wide closing view of the same workshop at night — two desk lamps lit, the room quiet, lit windows across the rooftops beyond."
+          description="Wide closing view of the same room at night — one lamp lit over the bench, the work left mid-flow, lit windows across the rooftops beyond."
           path="/public/assets/footer-scene.webp"
           className="w-full"
         />
@@ -669,8 +682,8 @@ function Footer() {
           <div>
             <p className="text-[15px] font-semibold tracking-tight">Bony Amin</p>
             <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-g600">
-              A two-person design engineering studio. We design, build and ship digital
-              products end to end.
+              Design engineer. I help founders and companies build, modify and enhance
+              their digital products.
             </p>
             <a
               href="mailto:hello@bonyamin.com"
@@ -698,7 +711,7 @@ function Footer() {
         </div>
 
         <p className="mt-14 border-t border-g200 pt-6 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-          © {new Date().getFullYear()} Bony Amin · Working with clients worldwide
+          © {new Date().getFullYear()} Bony Amin · Design engineer · Working with clients worldwide
         </p>
       </div>
     </footer>
@@ -719,7 +732,7 @@ export default function Home() {
         <Work />
         <Services />
         <Breather />
-        <Plans />
+        <Engagements />
         <Testimonials />
         <Faq />
         <ClosingCta />

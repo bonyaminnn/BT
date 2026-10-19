@@ -6,18 +6,21 @@ const SITE = "https://bonyamin.com";
 export const metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Bony Amin — Design engineer. We design and build your product end to end.",
+    default: "Bony Amin — Design engineer. I design and build digital products.",
     template: "%s · Bony Amin",
   },
   description:
-    "A two-person studio of one senior designer and one senior engineer. We design, build and ship websites, apps and digital products end to end — no agency hand-offs, no queue.",
+    "I'm a design engineer. I help founders and companies build, modify and enhance their digital products — websites, applications and product interfaces, designed and engineered by one pair of hands.",
   keywords: [
     "design engineer",
-    "two-person design studio",
+    "freelance design engineer",
     "website design and development",
-    "product design and build",
-    "end-to-end web development",
+    "web application design and development",
+    "product redesign",
+    "design engineering for founders",
   ],
+  authors: [{ name: "Bony Amin", url: SITE }],
+  creator: "Bony Amin",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -25,7 +28,7 @@ export const metadata = {
     siteName: "Bony Amin",
     title: "Bony Amin — Design engineer",
     description:
-      "One senior designer, one senior engineer. Designed, built and shipped by the same two hands.",
+      "One design engineer who designs and ships. Build something new, modify what you have, or enhance what already works.",
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
@@ -36,14 +39,31 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
-      "@id": `${SITE}/#studio`,
+      "@type": "Person",
+      "@id": `${SITE}/#bony`,
       name: "Bony Amin",
+      jobTitle: "Design Engineer",
       description:
-        "A two-person design engineering studio. One senior designer and one senior engineer design, build and ship websites, applications and digital products end to end.",
+        "Design engineer who designs and develops websites, applications and other digital products, helping founders and companies build, modify and enhance what they already have.",
+      url: SITE,
+      knowsAbout: [
+        "Product design",
+        "Front-end engineering",
+        "Design systems",
+        "Web performance",
+        "Web accessibility",
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE}/#practice`,
+      name: "Bony Amin — Design Engineering",
+      description:
+        "An independent design engineering practice. One design engineer designs and builds websites, web applications and digital products end to end — new builds, modifications to existing products, and enhancements to products already in use.",
       url: SITE,
       founder: { "@id": `${SITE}/#bony` },
-      numberOfEmployees: { "@type": "QuantitativeValue", value: 2 },
+      provider: { "@id": `${SITE}/#bony` },
+      numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
       areaServed: "Worldwide",
       availableLanguage: "English",
       serviceType: [
@@ -51,39 +71,24 @@ const jsonLd = {
         "Web application design and development",
         "Design systems",
         "Product redesign and rebuild",
+        "Performance and accessibility enhancement",
         "Design and engineering audits",
         "Ongoing design and development support",
       ],
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "USD",
-        lowPrice: "6000",
-        highPrice: "40000",
+        lowPrice: "2500",
+        highPrice: "30000",
         offerCount: 3,
       },
-    },
-    {
-      "@type": "Person",
-      "@id": `${SITE}/#bony`,
-      name: "Bony Amin",
-      jobTitle: "Design Engineer",
-      description:
-        "Design engineer who designs and develops websites, applications and digital products.",
-      url: SITE,
-      worksFor: { "@id": `${SITE}/#studio` },
-      knowsAbout: [
-        "Product design",
-        "Front-end engineering",
-        "Design systems",
-        "Web performance",
-      ],
     },
     {
       "@type": "WebSite",
       "@id": `${SITE}/#website`,
       url: SITE,
       name: "Bony Amin",
-      publisher: { "@id": `${SITE}/#studio` },
+      publisher: { "@id": `${SITE}/#bony` },
     },
     {
       "@type": "FAQPage",
