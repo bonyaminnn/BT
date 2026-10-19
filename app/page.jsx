@@ -5,6 +5,8 @@ import SiteFooter from "@/components/SiteFooter";
 import { Section, Eyebrow, Button, Tag } from "@/components/ui";
 import { faqs } from "@/content/faqs";
 import { projects } from "@/content/projects";
+import { tickerItems } from "@/content/ticker";
+import Ticker from "@/components/Ticker";
 import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
 
 /* ----------------------------------------------------------------- 2. hero */
@@ -147,7 +149,30 @@ function Work() {
   );
 }
 
-/* ---------------------------------------------------------------- 5. process */
+/* ----------------------------------------------------------------- 5. ticker */
+
+function Details() {
+  return (
+    <Section id="details" label="Interface details">
+      <div className="max-w-2xl">
+        <Eyebrow>In the details</Eyebrow>
+        <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+          The parts a case study never gets around to showing.
+        </h2>
+        <p className="mt-5 text-[17px] leading-relaxed text-g600">
+          Tables, empty states, error copy, component states. Unglamorous, and where most
+          of the work actually goes.
+        </p>
+      </div>
+
+      <div className="mt-12 -mx-5 sm:-mx-8">
+        <Ticker items={tickerItems} />
+      </div>
+    </Section>
+  );
+}
+
+/* ---------------------------------------------------------------- 6. process */
 
 const steps = [
   {
@@ -203,7 +228,7 @@ function Process() {
   );
 }
 
-/* --------------------------------------------------------------- 6. services */
+/* --------------------------------------------------------------- 7. services */
 
 const services = [
   {
@@ -250,7 +275,7 @@ function Services() {
   );
 }
 
-/* ------------------------------------------------------------- 7. breather */
+/* ------------------------------------------------------------- 8. breather */
 
 function Breather() {
   return (
@@ -274,7 +299,7 @@ function Breather() {
   );
 }
 
-/* ---------------------------------------------------------- 8. testimonials */
+/* ---------------------------------------------------------- 9. testimonials */
 
 /**
  * Deliberately empty. The IA requires real names, roles and approved quotes, and
@@ -348,7 +373,7 @@ function Testimonials() {
   );
 }
 
-/* ----------------------------------------------------------------- 9. about */
+/* ----------------------------------------------------------------- 10. about */
 
 function About() {
   return (
@@ -401,7 +426,7 @@ function About() {
   );
 }
 
-/* --------------------------------------------------------------- 10. contact */
+/* --------------------------------------------------------------- 11. contact */
 
 function Contact() {
   return (
@@ -464,6 +489,7 @@ export default function Home() {
         <Hero />
         <Credibility />
         <Work />
+        <Details />
         <Process />
         <Services />
         <Breather />

@@ -50,15 +50,19 @@ within 3 scrolls.**
 4. **Selected work** — three projects, alternating image and text, each tagged *Shipped
    product* or *Self-directed redesign*, each stating my actual contribution. Closes
    with the TL Ops workflow diagram. *(Scroll 2–3)*
-5. **Process** — Understand, Design, Build, Iterate. Four steps with spot icons. The
-   numbering is real sequence, not decoration. *(Scroll 3)*
-6. **Services** — product design, frontend implementation, design systems. One CTA.
-7. **Breather** — **addition.** One spot illustration and a single line, between the
+5. **Interface details ticker** — **addition.** A horizontally scrolling row of detail
+   crops: tables, empty states, error copy, component states. It does the job a case
+   study defers — showing the unglamorous parts — and gives the page one piece of motion.
+   Pauses on hover and focus; stops entirely under `prefers-reduced-motion`. *(Scroll 3)*
+6. **Process** — Understand, Design, Build, Iterate. Four steps with spot icons. The
+   numbering is real sequence, not decoration. *(Scroll 3–4)*
+7. **Services** — product design, frontend implementation, design systems. One CTA.
+8. **Breather** — **addition.** One spot illustration and a single line, between the
    selling and the proof. The reference site's rhythm depends on this kind of pause.
-8. **Testimonials** — three themed slots: product collaboration, design engineering,
+9. **Testimonials** — three themed slots: product collaboration, design engineering,
    ownership and delivery. Currently rendered as *quote pending* placeholders.
-9. **About** — personal story, interests, portrait, résumé link.
-10. **Contact** — the closing CTA, plus **a visible six-question Q&A** (addition). This
+10. **About** — personal story, interests, portrait, résumé link.
+11. **Contact** — the closing CTA, plus **a visible six-question Q&A** (addition). This
     is where AEO is earned: structured data describing answers a visitor can't see
     violates search guidelines, so the answers live on the page.
-11. **Footer** — wide closing scene, site nav, résumé, LinkedIn, GitHub, email.
+12. **Footer** — wide closing scene, site nav, résumé, LinkedIn, GitHub, email.

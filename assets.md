@@ -39,6 +39,26 @@ type treatment every time. Export at 2x, `.webp`, long edge 2400px.
 
 ---
 
+### Ticker (interface details)
+
+Six **detail crops**, not whole screens — the row moves, and a full page is unreadable at
+speed while a cropped table, form or component sheet reads instantly. Same capture rules
+as above, but crop tight: one element filling the frame, enough surrounding context to
+place it. All six at identical 4:3 so the row never jitters as it scrolls. These may be
+the most persuasive assets on the page for an engineering audience, because empty states
+and component states are what people who build things look for.
+
+| ID | Path | Ratio | Type | What to capture |
+|---|---|---|---|---|
+| `TICKER-01` | `/public/assets/ticker-01.webp` | 4:3 | product shot | The challan review table with its status column — density that reads as real operational software. |
+| `TICKER-02` | `/public/assets/ticker-02.webp` | 4:3 | product shot | The home-shifting booking form mid-completion, on mobile. |
+| `TICKER-03` | `/public/assets/ticker-03.webp` | 4:3 | product shot | The seat-selection grid, a few seats held and one unavailable. |
+| `TICKER-04` | `/public/assets/ticker-04.webp` | 4:3 | product shot | A component library sheet — buttons and inputs in their states, as built. |
+| `TICKER-05` | `/public/assets/ticker-05.webp` | 4:3 | product shot | An empty state with its error copy, showing the writing as much as the layout. |
+| `TICKER-06` | `/public/assets/ticker-06.webp` | 4:3 | product shot | A dense filter and search bar with active filter chips applied. |
+
+---
+
 ## Layer 2 — the drawn set
 
 ### Shared style rules
@@ -169,7 +189,17 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | TESTIMONIAL-03 | /public/assets/testimonial-03.webp | 1:1 | product shot | 1 |
 | ABOUT-PORTRAIT | /public/assets/about-portrait.webp | 4:5 | product shot | 1 |
 | ABOUT-SPOT | /public/assets/about-spot.webp | 3:2 | illustration | 2 |
+| TICKER-01 | /public/assets/ticker-01.webp | 4:3 | product shot | 1 |
+| TICKER-02 | /public/assets/ticker-02.webp | 4:3 | product shot | 1 |
+| TICKER-03 | /public/assets/ticker-03.webp | 4:3 | product shot | 1 |
+| TICKER-04 | /public/assets/ticker-04.webp | 4:3 | product shot | 1 |
+| TICKER-05 | /public/assets/ticker-05.webp | 4:3 | product shot | 1 |
+| TICKER-06 | /public/assets/ticker-06.webp | 4:3 | product shot | 1 |
 | FOOTER-SCENE | /public/assets/footer-scene.webp | 16:5 | illustration | 2 |
 
-**Total: 20 slots** — 9 real captures (layer 1) and 11 drawn assets (layer 2). Only
+**Total: 26 slots** — 15 real captures (layer 1) and 11 drawn assets (layer 2). Only
 layer 2 is generated as a set.
+
+The original brief planned around 20 assets; the ticker takes it to 26. All six additions
+are captures of work that already exists, so nothing new has to be generated — only
+screenshotted and cropped.
