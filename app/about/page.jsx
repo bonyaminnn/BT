@@ -1,7 +1,7 @@
 import Slot from "@/components/Slot";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Section, Eyebrow, Button } from "@/components/ui";
+import { Section, Button } from "@/components/ui";
 import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
 
 export const metadata = {
@@ -25,8 +25,7 @@ export default function About() {
       <main id="main">
         <section aria-label="About" className="px-5 pt-16 pb-12 sm:px-8 md:pt-24">
           <div className="mx-auto w-full max-w-6xl">
-            <Eyebrow>About me</Eyebrow>
-            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
               A designer who cares about how things work.
             </h1>
           </div>

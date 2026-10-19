@@ -19,3 +19,11 @@ export const site = {
   yearsExperience: 5,
   replyWindow: "1 business day",
 };
+
+/** The strip at the foot of the hero: what I am, and the three places I do it. */
+export const usps = [
+  "Design engineer",
+  "Simplifying complex systems",
+  "B2B SaaS",
+  "Dashboards & internal tools",
+];

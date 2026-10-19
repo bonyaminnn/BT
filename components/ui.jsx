@@ -12,14 +12,6 @@ export function Section({ id, label, children, className = "" }) {
   );
 }
 
-export function Eyebrow({ children }) {
-  return (
-    <p className="font-mono text-[11px] font-semibold tracking-[0.18em] text-g500 uppercase">
-      {children}
-    </p>
-  );
-}
-
 export function Button({ href, children, variant = "solid", download = false }) {
   const styles =
     variant === "solid"

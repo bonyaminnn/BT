@@ -19,9 +19,6 @@ export default function SiteHeader() {
       >
         <a href="/" className="text-[15px] font-semibold tracking-tight">
           {site.name}
-          <span className="ml-2 hidden font-mono text-[10px] font-normal tracking-[0.14em] text-g500 uppercase sm:inline">
-            {site.role}
-          </span>
         </a>
         <ul className="hidden items-center gap-8 md:flex">
           {links.map(([label, href]) => (

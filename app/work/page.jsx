@@ -1,7 +1,7 @@
 import Slot from "@/components/Slot";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Section, Eyebrow, Button, Tag } from "@/components/ui";
+import { Section, Button, Tag } from "@/components/ui";
 import { projects } from "@/content/projects";
 
 export const metadata = {
@@ -18,8 +18,7 @@ export default function WorkIndex() {
       <main id="main">
         <section aria-label="Work" className="px-5 pt-16 pb-12 sm:px-8 md:pt-24">
           <div className="mx-auto w-full max-w-6xl">
-            <Eyebrow>Work ({String(projects.length).padStart(2, "0")})</Eyebrow>
-            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
               Products built for people doing a complicated job.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">

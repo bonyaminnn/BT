@@ -2,12 +2,12 @@ import Slot from "@/components/Slot";
 import IconSlot from "@/components/IconSlot";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Section, Eyebrow, Button, Tag } from "@/components/ui";
+import { Section, Button, Tag } from "@/components/ui";
 import { faqs } from "@/content/faqs";
 import { projects } from "@/content/projects";
 import { tickerItems } from "@/content/ticker";
 import Ticker from "@/components/Ticker";
-import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
+import { site, usps, SHOW_LOCATION, LOCATION } from "@/content/site";
 
 /* ----------------------------------------------------------------- 2. hero */
 
@@ -16,11 +16,7 @@ function Hero() {
     <section aria-label="Introduction" className="px-5 pt-16 pb-12 sm:px-8 md:pt-24">
       <div className="mx-auto w-full max-w-6xl">
         <div className="max-w-3xl">
-          <Eyebrow>
-            {site.role}
-            {SHOW_LOCATION ? ` · ${LOCATION}` : ""}
-          </Eyebrow>
-          <h1 className="mt-5 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
+          <h1 className=" text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
             I design and build better digital product experiences.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
@@ -33,9 +29,17 @@ function Hero() {
               Download résumé
             </Button>
           </div>
-          <p className="mt-7 font-mono text-[11px] tracking-[0.12em] text-g500 uppercase">
-            Product design · Interaction engineering · Frontend development
-          </p>
+          {/* USP strip: what I am, and the three places I do it. */}
+          <ul className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-g200 pt-6 font-mono text-[11px] tracking-[0.1em] text-g600 uppercase">
+            {usps.map((u, i) => (
+              <li key={u} className="flex items-center gap-3">
+                {i > 0 && (
+                  <span aria-hidden="true" className="h-1 w-1 rounded-full bg-g400" />
+                )}
+                {u}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <Slot
@@ -62,8 +66,7 @@ function Credibility() {
   ];
   return (
     <Section id="credibility" label="Experience and expertise" className="border-t-0 bg-g50">
-      <Eyebrow>Experience</Eyebrow>
-      <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
         Product work on operational systems people use to do their jobs.
       </h2>
       <dl className="mt-10 grid grid-cols-1 gap-x-8 gap-y-7 border-t border-g200 pt-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -96,8 +99,7 @@ function Work() {
     <Section id="work" label="Selected work">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Eyebrow>Selected work (03)</Eyebrow>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
             Three products, and what I actually contributed to each.
           </h2>
         </div>
@@ -155,13 +157,11 @@ function Details() {
   return (
     <Section id="details" label="Interface details">
       <div className="max-w-2xl">
-        <Eyebrow>In the details</Eyebrow>
-        <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-          The parts a case study never gets around to showing.
-        </h2>
-        <p className="mt-5 text-[17px] leading-relaxed text-g600">
-          Tables, empty states, error copy, component states. Unglamorous, and where most
-          of the work actually goes.
+        {/* A heading for structure, set at body size so the row stays the subject. */}
+        <h2 className="text-[15px] font-medium tracking-tight text-g700">Miscellaneous</h2>
+        <p className="mt-2 text-[15px] leading-relaxed text-g600">
+          Tables, empty states, error copy, component states — the unglamorous parts,
+          where most of the work actually goes.
         </p>
       </div>
 
@@ -204,8 +204,7 @@ const steps = [
 function Process() {
   return (
     <Section id="process" label="My process" className="bg-g50">
-      <Eyebrow>My approach</Eyebrow>
-      <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
         From problem to production.
       </h2>
       <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-g600">
@@ -232,9 +231,14 @@ function Process() {
 
 const services = [
   {
-    name: "Product design",
-    body: "Turning complex requirements and user workflows into intuitive interfaces, from early concepts through to detailed product experiences.",
-    icon: { id: "ICON-DESIGN", description: "Spot icon: a pen nib over a grid.", path: "/public/assets/icon-design.webp" },
+    name: "Website design and development",
+    body: "Marketing and product websites designed and built end to end — the site that has to do the selling before anyone talks to you.",
+    icon: { id: "ICON-WEBSITE", description: "Spot icon: a browser window with light falling through it.", path: "/public/assets/icon-website.webp" },
+  },
+  {
+    name: "Application design",
+    body: "Turning complex requirements and user workflows into interfaces people can use daily — dashboards, internal tools and operational systems.",
+    icon: { id: "ICON-APP", description: "Spot icon: a hinged toolbox, lid open, two tools visible inside.", path: "/public/assets/icon-app.webp" },
   },
   {
     name: "Frontend implementation",
@@ -251,15 +255,14 @@ const services = [
 function Services() {
   return (
     <Section id="services" label="Services">
-      <Eyebrow>How I can help</Eyebrow>
-      <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
         Better product experiences, from design to implementation.
       </h2>
       <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-g600">
         I help teams improve digital products through thoughtful design and careful
         implementation — design, implementation, or both, stated clearly up front.
       </p>
-      <ul className="mt-12 grid gap-10 md:grid-cols-3">
+      <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((s) => (
           <li key={s.name}>
             <IconSlot {...s.icon} ratio="1:1" />
@@ -345,8 +348,7 @@ const testimonialSlots = [
 function Testimonials() {
   return (
     <Section id="testimonials" label="Testimonials">
-      <Eyebrow>Kind words</Eyebrow>
-      <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
         What others say.
       </h2>
       <ul className="mt-12 grid gap-10 md:grid-cols-3">
@@ -380,8 +382,7 @@ function About() {
     <Section id="about" label="About me">
       <div className="grid gap-10 md:grid-cols-[1fr_20rem] md:gap-16">
         <div>
-          <Eyebrow>About me</Eyebrow>
-          <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             A designer who cares about how things work.
           </h2>
           <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-g600">
@@ -432,8 +433,7 @@ function Contact() {
   return (
     <Section id="contact" label="Contact" className="bg-g50">
       <div className="max-w-3xl">
-        <Eyebrow>Let&rsquo;s work together</Eyebrow>
-        <h2 className="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+        <h2 className="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
           Have a complex product problem to solve?
         </h2>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">

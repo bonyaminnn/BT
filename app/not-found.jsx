@@ -1,6 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Eyebrow, Button } from "@/components/ui";
+import { Button } from "@/components/ui";
 
 export const metadata = { title: "Page not found" };
 
@@ -10,8 +10,7 @@ export default function NotFound() {
       <SiteHeader />
       <main id="main" className="px-5 py-28 sm:px-8 md:py-36">
         <div className="mx-auto w-full max-w-6xl">
-          <Eyebrow>404</Eyebrow>
-          <h1 className="mt-5 max-w-2xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
+          <h1 className="max-w-2xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
             That page isn&rsquo;t here.
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-g600">

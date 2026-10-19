@@ -100,12 +100,13 @@ optical size.
 
 ### Service icons
 
-Same construction as the process icons, same optical weight — they appear further down
-the same page and any inconsistency will read as carelessness.
+Four now, one per service. Same construction as the process icons, same optical weight —
+they appear further down the same page and any inconsistency will read as carelessness.
 
 | ID | Path | Ratio | Type | Brief |
 |---|---|---|---|---|
-| `ICON-DESIGN` | `/public/assets/icon-design.webp` | 1:1 | icon | A pen nib resting on a faint grid, one line already drawn. |
+| `ICON-WEBSITE` | `/public/assets/icon-website.webp` | 1:1 | icon | A browser window, drawn simply, with soft light falling through it onto an implied surface. |
+| `ICON-APP` | `/public/assets/icon-app.webp` | 1:1 | icon | A small hinged toolbox, lid open, two simple tools visible inside. |
 | `ICON-FRONTEND` | `/public/assets/icon-frontend.webp` | 1:1 | icon | A pair of angle brackets enclosing a small layout frame. |
 | `ICON-SYSTEM` | `/public/assets/icon-system.webp` | 1:1 | icon | Modular blocks of different widths stacked so they interlock — the same blocks as `PROCESS-03`, at rest. |
 
@@ -180,7 +181,8 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | PROCESS-02 | /public/assets/process-02-design.webp | 1:1 | icon | 2 |
 | PROCESS-03 | /public/assets/process-03-build.webp | 1:1 | icon | 2 |
 | PROCESS-04 | /public/assets/process-04-iterate.webp | 1:1 | icon | 2 |
-| ICON-DESIGN | /public/assets/icon-design.webp | 1:1 | icon | 2 |
+| ICON-WEBSITE | /public/assets/icon-website.webp | 1:1 | icon | 2 |
+| ICON-APP | /public/assets/icon-app.webp | 1:1 | icon | 2 |
 | ICON-FRONTEND | /public/assets/icon-frontend.webp | 1:1 | icon | 2 |
 | ICON-SYSTEM | /public/assets/icon-system.webp | 1:1 | icon | 2 |
 | BREATHER-SPOT | /public/assets/breather-spot.webp | 3:2 | illustration | 2 |
@@ -197,9 +199,9 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | TICKER-06 | /public/assets/ticker-06.webp | 4:3 | product shot | 1 |
 | FOOTER-SCENE | /public/assets/footer-scene.webp | 16:5 | illustration | 2 |
 
-**Total: 26 slots** — 15 real captures (layer 1) and 11 drawn assets (layer 2). Only
+**Total: 27 slots** — 15 real captures (layer 1) and 12 drawn assets (layer 2). Only
 layer 2 is generated as a set.
 
-The original brief planned around 20 assets; the ticker takes it to 26. All six additions
+The original brief planned around 20 assets; the ticker and the fourth service icon take it to 27. All six additions
 are captures of work that already exists, so nothing new has to be generated — only
 screenshotted and cropped.

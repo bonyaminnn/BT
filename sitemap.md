@@ -31,7 +31,11 @@ homepage, `CreativeWork` plus `BreadcrumbList` on each case study.
 Work · Services · About · Testimonials · **CTA: Get in touch**
 
 Exactly as the IA specifies. "Get in touch" is the only button in the header and points
-at the contact section on the homepage.
+at the contact section on the homepage. The wordmark carries the name alone — the
+"Design engineer" label moved to the hero's USP strip, so the role is stated once, where
+it is read rather than skimmed past.
+
+**No eyebrows anywhere.** Section labels are gone; each section opens on its heading.
 
 ---
 
@@ -42,21 +46,22 @@ budget: **the hero alone must work in 5 seconds, and the three key messages must
 within 3 scrolls.**
 
 1. **Navigation** — name and role, four links, one CTA. Sticky.
-2. **Hero** — eyebrow, headline, one supporting line, two CTAs ("See my work" primary,
-   "Download résumé" secondary), the expertise line, and a wide **real product
-   interface** rather than an illustration. *(Scroll 1)*
+2. **Hero** — headline, one supporting line, two CTAs ("See my work" primary, "Download
+   résumé" secondary), a **USP strip** (Design engineer · Simplifying complex systems ·
+   B2B SaaS · Dashboards & internal tools), and a wide **real product interface** rather
+   than an illustration. *(Scroll 1)*
 3. **Credibility** — four facts: years, domains, who I work with, focus. Plus an
    optional logo row. Backs the hero claim immediately. *(Scroll 1–2)*
 4. **Selected work** — three projects, alternating image and text, each tagged *Shipped
    product* or *Self-directed redesign*, each stating my actual contribution. Closes
    with the TL Ops workflow diagram. *(Scroll 2–3)*
-5. **Interface details ticker** — **addition.** A horizontally scrolling row of detail
-   crops: tables, empty states, error copy, component states. It does the job a case
-   study defers — showing the unglamorous parts — and gives the page one piece of motion.
+5. **Miscellaneous ticker** — **addition.** A horizontally scrolling row of detail
+   crops: tables, empty states, error copy, component states. Titled at body size, not as
+   a section heading, so the row stays the subject. Gives the page one piece of motion.
    Pauses on hover and focus; stops entirely under `prefers-reduced-motion`. *(Scroll 3)*
 6. **Process** — Understand, Design, Build, Iterate. Four steps with spot icons. The
    numbering is real sequence, not decoration. *(Scroll 3–4)*
-7. **Services** — product design, frontend implementation, design systems. One CTA.
+7. **Services** — website design and development, application design, frontend implementation, design systems. One CTA.
 8. **Breather** — **addition.** One spot illustration and a single line, between the
    selling and the proof. The reference site's rhythm depends on this kind of pause.
 9. **Testimonials** — three themed slots: product collaboration, design engineering,

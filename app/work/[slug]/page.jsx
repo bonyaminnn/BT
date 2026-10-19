@@ -1,7 +1,7 @@
 import Slot from "@/components/Slot";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { Section, Eyebrow, Button, Tag } from "@/components/ui";
+import { Section, Button, Tag } from "@/components/ui";
 import { projects, getProject } from "@/content/projects";
 import { site } from "@/content/site";
 import { notFound } from "next/navigation";
@@ -58,7 +58,7 @@ export default async function CaseStudy({ params }) {
             <div className="mt-6">
               <Tag kind={project.kind} />
             </div>
-            <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
+            <h1 className="max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl">
               {project.headline}
             </h1>
             <p className="mt-5 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
@@ -72,8 +72,7 @@ export default async function CaseStudy({ params }) {
         {/* The IA's case-study outline, rendered as the writing scaffold. Each heading is
             real and final; the body under it is what still has to be written. */}
         <Section id="case-study" label="Case study">
-          <Eyebrow>Case study outline</Eyebrow>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
             {project.sections.length} sections to write.
           </h2>
           <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-g600">
@@ -107,8 +106,7 @@ export default async function CaseStudy({ params }) {
         <Section id="next" label="Next project" className="bg-g50">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <Eyebrow>Next project</Eyebrow>
-              <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                 {next.name}
               </h2>
               <p className="mt-2 text-[16px] text-g600">{next.headline}</p>
