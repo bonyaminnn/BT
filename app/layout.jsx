@@ -1,34 +1,35 @@
 import "./globals.css";
 import { faqs } from "@/content/faqs";
+import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
 
-const SITE = "https://bonyamin.com";
+const SITE = site.domain;
 
 export const metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Bony Amin — Design engineer. I design and build digital products.",
+    default: "Bony Amin — Design Engineer",
     template: "%s · Bony Amin",
   },
   description:
-    "I'm a design engineer. I help founders and companies build, modify and enhance their digital products — websites, applications and product interfaces, designed and engineered by one pair of hands.",
+    "Design engineer bringing product design and frontend engineering together. I turn complex workflows into intuitive, polished, working software — product work across logistics, transportation and operational products.",
   keywords: [
     "design engineer",
-    "freelance design engineer",
-    "website design and development",
-    "web application design and development",
-    "product redesign",
-    "design engineering for founders",
+    "product designer who codes",
+    "product design and frontend engineering",
+    "design engineer portfolio",
+    "enterprise UX workflow design",
+    "design systems",
   ],
-  authors: [{ name: "Bony Amin", url: SITE }],
-  creator: "Bony Amin",
+  authors: [{ name: site.name, url: SITE }],
+  creator: site.name,
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
+    type: "profile",
     url: SITE,
-    siteName: "Bony Amin",
-    title: "Bony Amin — Design engineer",
+    siteName: site.name,
+    title: "Bony Amin — Design Engineer",
     description:
-      "One design engineer who designs and ships. Build something new, modify what you have, or enhance what already works.",
+      "I design and build better digital product experiences — product design and frontend engineering in one person.",
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
@@ -41,53 +42,47 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": `${SITE}/#bony`,
-      name: "Bony Amin",
-      jobTitle: "Design Engineer",
+      name: site.name,
+      jobTitle: site.role,
       description:
-        "Design engineer who designs and develops websites, applications and other digital products, helping founders and companies build, modify and enhance what they already have.",
+        "Design engineer who combines product design with frontend engineering, turning complex operational workflows into intuitive, working software.",
       url: SITE,
+      email: `mailto:${site.email}`,
+      ...(SHOW_LOCATION
+        ? { address: { "@type": "PostalAddress", addressCountry: LOCATION } }
+        : {}),
       knowsAbout: [
         "Product design",
-        "Front-end engineering",
+        "Interaction design",
+        "Frontend development",
         "Design systems",
-        "Web performance",
+        "Enterprise workflow UX",
+        "Mobile UX",
         "Web accessibility",
       ],
+      knowsLanguage: "English",
     },
     {
       "@type": "ProfessionalService",
       "@id": `${SITE}/#practice`,
-      name: "Bony Amin — Design Engineering",
+      name: `${site.name} — Design Engineering`,
       description:
-        "An independent design engineering practice. One design engineer designs and builds websites, web applications and digital products end to end — new builds, modifications to existing products, and enhancements to products already in use.",
+        "Product design, frontend implementation and design systems work for teams improving digital products. Available for design engineering roles and for freelance and contract projects.",
       url: SITE,
-      founder: { "@id": `${SITE}/#bony` },
       provider: { "@id": `${SITE}/#bony` },
-      numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
       areaServed: "Worldwide",
       availableLanguage: "English",
       serviceType: [
-        "Website design and development",
-        "Web application design and development",
+        "Product design",
+        "Frontend implementation",
         "Design systems",
-        "Product redesign and rebuild",
-        "Performance and accessibility enhancement",
-        "Design and engineering audits",
-        "Ongoing design and development support",
       ],
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: "2500",
-        highPrice: "30000",
-        offerCount: 3,
-      },
     },
     {
       "@type": "WebSite",
       "@id": `${SITE}/#website`,
       url: SITE,
-      name: "Bony Amin",
+      name: site.name,
       publisher: { "@id": `${SITE}/#bony` },
     },
     {

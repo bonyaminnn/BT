@@ -1,6 +1,7 @@
 import Slot from "@/components/Slot";
 import IconSlot from "@/components/IconSlot";
 import { faqs } from "@/content/faqs";
+import { site, SHOW_LOCATION, LOCATION } from "@/content/site";
 
 /* ---------------------------------------------------------------- primitives */
 
@@ -39,14 +40,29 @@ function Button({ href, children, variant = "solid" }) {
   );
 }
 
+/** Shipped vs. concept. The IA requires production work be distinguishable from
+ *  independent explorations, so the distinction is a visible tag, not a footnote. */
+function Tag({ kind }) {
+  const shipped = kind === "shipped";
+  return (
+    <span
+      className={`rounded-sm border px-2 py-1 font-mono text-[10px] font-semibold tracking-[0.12em] uppercase ${
+        shipped ? "border-ink text-ink" : "border-g400 text-g500"
+      }`}
+    >
+      {shipped ? "Shipped product" : "Self-directed redesign"}
+    </span>
+  );
+}
+
 /* ------------------------------------------------------------------ 1. nav */
 
 function Navigation() {
   const links = [
     ["Work", "#work"],
     ["Services", "#services"],
-    ["Process", "#process"],
-    ["About", "#statement"],
+    ["About", "#about"],
+    ["Testimonials", "#testimonials"],
   ];
   return (
     <header className="sticky top-0 z-40 border-b border-g200 bg-paper/90 backdrop-blur">
@@ -55,9 +71,9 @@ function Navigation() {
         className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
       >
         <a href="#main" className="text-[15px] font-semibold tracking-tight">
-          Bony&nbsp;Amin
+          {site.name}
           <span className="ml-2 hidden font-mono text-[10px] font-normal tracking-[0.14em] text-g500 uppercase sm:inline">
-            design engineer
+            {site.role}
           </span>
         </a>
         <ul className="hidden items-center gap-8 md:flex">
@@ -73,7 +89,7 @@ function Navigation() {
           href="#contact"
           className="rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-paper hover:bg-g700"
         >
-          Start a project
+          Get in touch
         </a>
       </nav>
     </header>
@@ -87,51 +103,57 @@ function Hero() {
     <section aria-label="Introduction" className="px-5 pt-16 pb-12 sm:px-8 md:pt-24">
       <div className="mx-auto w-full max-w-6xl">
         <div className="max-w-3xl">
-          <Eyebrow>Bony Amin · design engineer</Eyebrow>
+          <Eyebrow>
+            {site.role}
+            {SHOW_LOCATION ? ` · ${LOCATION}` : ""}
+          </Eyebrow>
           <h1 className="mt-5 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
-            I design and build digital products — end to end.
+            I design and build better digital product experiences.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
-            A design engineer who does both halves of the job. I help founders and
-            companies build what&rsquo;s new, modify what no longer fits, and enhance
-            what already works.
+            I bring product design and frontend engineering together to turn complex
+            workflows into intuitive, polished, working software.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="#contact">Start a project</Button>
-            <a href="#work" className="text-[15px] text-g600 underline underline-offset-4 hover:text-ink">
-              See selected work
-            </a>
+            <Button href="#work">Explore my work</Button>
+            <Button href="#contact" variant="outline">
+              Let&rsquo;s work together
+            </Button>
           </div>
+          <p className="mt-7 font-mono text-[11px] tracking-[0.12em] text-g500 uppercase">
+            Product design · Interaction engineering · Frontend development
+          </p>
         </div>
 
         <Slot
           className="mt-14 w-full"
-          id="HERO-SCENE"
-          type="illustration"
-          ratio="16:6"
-          description="Wide view of the workbench in morning light — one long bench with a sketchbook at one end and a screen mid-layout at the other, tall windows onto rooftops."
-          path="/public/assets/hero-scene.webp"
+          id="HERO-PRODUCT"
+          type="product shot"
+          ratio="16:9"
+          description="A real product interface from shipped work — the TL Ops challan workflow or Truck Lagbe booking flow, shown on device, legible at a glance."
+          path="/public/assets/hero-product.webp"
         />
       </div>
     </section>
   );
 }
 
-/* --------------------------------------------------------- 3. trust strip */
+/* ----------------------------------------------------- 3. credibility strip */
 
-function TrustStrip() {
+function Credibility() {
   const facts = [
-    ["Replies within", "1 business day"],
-    ["Projects at a time", "One or two"],
-    ["You own", "Every file and repo"],
-    ["Fixed price", "Before work starts"],
+    ["Experience", `~${site.yearsExperience} years`],
+    ["Domains", "Logistics · transportation · digital products"],
+    ["Works with", "Product and engineering teams"],
+    ["Focus", "Design-to-development implementation"],
   ];
   return (
-    <section
-      aria-label="At a glance"
-      className="border-y border-g200 bg-g50 px-5 py-8 sm:px-8"
-    >
-      <dl className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-x-6 gap-y-6 md:grid-cols-4">
+    <Section id="credibility" label="Experience and expertise" className="border-t-0 bg-g50">
+      <Eyebrow>Experience</Eyebrow>
+      <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+        Product work on operational systems people use to do their jobs.
+      </h2>
+      <dl className="mt-10 grid grid-cols-1 gap-x-8 gap-y-7 border-t border-g200 pt-8 sm:grid-cols-2 lg:grid-cols-4">
         {facts.map(([k, v]) => (
           <div key={k}>
             <dt className="font-mono text-[10px] tracking-[0.14em] text-g500 uppercase">
@@ -141,153 +163,62 @@ function TrustStrip() {
           </div>
         ))}
       </dl>
-    </section>
-  );
-}
-
-/* ----------------------------------------------------------- 4. statement */
-
-function Statement() {
-  return (
-    <Section id="statement" label="How I work" className="border-t-0">
-      <div className="max-w-4xl">
-        <Eyebrow>Why one design engineer</Eyebrow>
-        <p className="mt-6 text-2xl leading-[1.35] font-medium tracking-tight text-pretty sm:text-3xl md:text-4xl">
-          Most projects lose their weeks in the gap between the designer, the developer
-          and the person managing both. I removed the gap by doing both halves myself,
-          so decisions happen in the same hour as the work. And you don&rsquo;t have to
-          start over to hire me — I&rsquo;ll build something new, refit what you have,
-          or sharpen what already earns.
-        </p>
-      </div>
+      <Slot
+        className="mt-10 w-full"
+        id="CRED-LOGOS"
+        type="product shot"
+        ratio="8:1"
+        description="Quiet row of company or product marks from real work — add only the ones cleared for publication, otherwise delete this slot."
+        path="/public/assets/cred-logos.webp"
+        tone="quiet"
+      />
     </Section>
   );
 }
 
-/* ------------------------------------------------------- 5. feature blocks */
-
-const features = [
-  {
-    eyebrow: "01 — Build",
-    title: "Build something new, properly, the first time",
-    body: "A new site, product or application from nothing. I start with what it has to prove rather than a moodboard, then design and engineer it together — interface, type, motion and words — because a visitor decides what you are worth in about five seconds and every one of those choices is doing the talking.",
-    slot: {
-      id: "FEATURE-BUILD",
-      type: "illustration",
-      ratio: "4:3",
-      description: "The drawing end of the bench seen from above: fresh grid paper, loose layout sketches fanned out, a pencil stub and a calliper resting on the grid.",
-      path: "/public/assets/feature-build.webp",
-    },
-  },
-  {
-    eyebrow: "02 — Modify",
-    title: "Refit what you have instead of starting over",
-    body: "Most products do not need demolishing — they need the parts that no longer fit replaced. I work inside your existing stack, brand and half-finished build, so a redesign or rebuild costs you a refit rather than a restart. If a smaller change gets you there, I will tell you that instead.",
-    slot: {
-      id: "FEATURE-MODIFY",
-      type: "illustration",
-      ratio: "4:3",
-      description: "The middle of the bench: a partly dismantled wooden frame with one new piece being fitted into it, old piece set aside, screwdriver and clamp in reach.",
-      path: "/public/assets/feature-modify.webp",
-    },
-  },
-  {
-    eyebrow: "03 — Enhance",
-    title: "Make what already works noticeably better",
-    body: "The product earns, but it is slow, dated, or quietly leaking conversions. I measure it, fix the real causes, and leave it faster and more accessible than it was — then hand you every file and repository. Thirty days of post-launch support comes with every project.",
-    slot: {
-      id: "FEATURE-ENHANCE",
-      type: "illustration",
-      ratio: "4:3",
-      description: "The build end of the bench at work: a screen showing a half-built interface, a small oil can and a whetstone beside the keyboard, pinned wireframes on the wall behind.",
-      path: "/public/assets/feature-enhance.webp",
-    },
-  },
-];
-
-function Features() {
-  return (
-    <Section id="process" label="The three jobs I take">
-      <div className="mb-16 max-w-2xl md:mb-20">
-        <Eyebrow>Build · modify · enhance</Eyebrow>
-        <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-          Three jobs, depending on where your product already is.
-        </h2>
-      </div>
-      <div className="space-y-20 md:space-y-28">
-        {features.map((f, i) => (
-          <div
-            key={f.slot.id}
-            className="grid items-center gap-8 md:grid-cols-2 md:gap-14"
-          >
-            <Slot
-              {...f.slot}
-              className={`w-full ${i % 2 === 1 ? "md:order-2" : ""}`}
-              tone="quiet"
-            />
-            <div className={i % 2 === 1 ? "md:order-1" : ""}>
-              <Eyebrow>{f.eyebrow}</Eyebrow>
-              <h3 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-                {f.title}
-              </h3>
-              <p className="mt-4 text-[17px] leading-relaxed text-g600">{f.body}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------ 6. work */
+/* ------------------------------------------------------------ 4. selected work */
 
 const work = [
   {
-    name: "Fieldnote",
-    kind: "B2B SaaS · site and product UI",
-    result: "Designed and rebuilt the marketing site and app shell in five weeks. Trial sign-ups up, support tickets about navigation gone.",
+    name: "TL Ops — Challan Workflow",
+    category: "Enterprise UX · Logistics · Workflow design",
+    headline: "Making operational workflows easier to manage",
+    body: "I worked on digitising the challan submission and review process in TL Ops, bringing an operational paper workflow into a structured digital experience — mapping the existing process, designing the interaction, and working through implementation with the team.",
+    kind: "shipped",
     slot: {
       id: "WORK-01",
       type: "product shot",
       ratio: "16:10",
-      description: "Painted screen mock: a SaaS marketing page on the monitor at the build end of the bench, paper and pencil beside it.",
-      path: "/public/assets/work-01-fieldnote.webp",
+      description: "TL Ops challan submission and review interface — the main workflow screen, real UI, annotated if confidentiality allows.",
+      path: "/public/assets/work-01-tlops.webp",
     },
   },
   {
-    name: "Harbour & Co",
-    kind: "Professional services · new site",
-    result: "Took a firm from a template site to a brand its enquiry form could charge for. Live in under three weeks.",
+    name: "Truck Lagbe — Home Shifting",
+    category: "Transportation · Service design · Mobile UX",
+    headline: "Bringing a new service into an existing platform",
+    body: "I worked on integrating a home-shifting service into the Truck Lagbe app, connecting service discovery to the booking experience without disrupting the flows that existing users already relied on.",
+    kind: "shipped",
     slot: {
       id: "WORK-02",
       type: "product shot",
       ratio: "16:10",
-      description: "Painted mock of a premium services homepage pinned to the wall above the bench beside a swatch of type specimens.",
-      path: "/public/assets/work-02-harbour.webp",
+      description: "Truck Lagbe home-shifting screens — service discovery into booking, two or three mobile frames side by side.",
+      path: "/public/assets/work-02-trucklagbe.webp",
     },
   },
   {
-    name: "Loomwork",
-    kind: "Marketplace · design system",
-    result: "One component library replacing four inconsistent front-ends, so their own team now ships pages without me.",
+    name: "Shohoz — Bus Booking Redesign",
+    category: "Travel · Interaction design · Mobile UX",
+    headline: "Making the booking journey easier to understand",
+    body: "A self-directed redesign exploring journey clarity, seat selection, visual hierarchy and accessibility in the bus-ticket booking experience — a UX audit first, then the interface changes that followed from it.",
+    kind: "concept",
     slot: {
       id: "WORK-03",
       type: "product shot",
       ratio: "16:10",
-      description: "Painted shelf above the bench: labelled boxes and modular wooden blocks that clearly fit together, standing in for a component library.",
-      path: "/public/assets/work-03-loomwork.webp",
-    },
-  },
-  {
-    name: "Northbound",
-    kind: "D2C · performance rescue",
-    result: "Same design, rebuilt: load time cut to under a second on mobile and checkout drop-off down sharply.",
-    slot: {
-      id: "WORK-04",
-      type: "product shot",
-      ratio: "16:10",
-      description: "Painted mock of a storefront page on a tablet propped against the window, stopwatch and oil can beside it on the sill.",
-      path: "/public/assets/work-04-northbound.webp",
+      description: "Shohoz redesign — the seat-selection interaction, before and after, as mobile frames.",
+      path: "/public/assets/work-03-shohoz.webp",
     },
   },
 ];
@@ -297,9 +228,9 @@ function Work() {
     <Section id="work" label="Selected work">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Eyebrow>Selected work (04)</Eyebrow>
-          <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-            Have I built something like what you need? Probably.
+          <Eyebrow>Selected work (03)</Eyebrow>
+          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+            Three products, and what I actually contributed to each.
           </h2>
         </div>
         <a href="/work" className="text-[15px] text-g600 underline underline-offset-4 hover:text-ink">
@@ -307,82 +238,153 @@ function Work() {
         </a>
       </div>
 
-      <ul className="mt-12 grid gap-10 sm:grid-cols-2">
-        {work.map((p) => (
-          <li key={p.name}>
-            <Slot {...p.slot} className="w-full" />
-            <div className="mt-5">
-              <h3 className="text-lg font-semibold tracking-tight">{p.name}</h3>
-              <p className="mt-1 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-                {p.kind}
+      <ul className="mt-12 space-y-16 md:space-y-24">
+        {work.map((p, i) => (
+          <li key={p.name} className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
+            <Slot
+              {...p.slot}
+              className={`w-full ${i % 2 === 1 ? "md:order-2" : ""}`}
+            />
+            <div className={i % 2 === 1 ? "md:order-1" : ""}>
+              <div className="flex flex-wrap items-center gap-3">
+                <Tag kind={p.kind} />
+              </div>
+              <p className="mt-4 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
+                {p.category}
               </p>
-              <p className="mt-3 text-[15px] leading-relaxed text-g600">{p.result}</p>
+              <h3 className="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">
+                {p.name}
+              </h3>
+              <p className="mt-2 text-[17px] font-medium text-g700">{p.headline}</p>
+              <p className="mt-4 text-[16px] leading-relaxed text-g600">{p.body}</p>
+              <a
+                href="/work"
+                className="mt-6 inline-block text-[15px] underline underline-offset-4 hover:text-g600"
+              >
+                Explore case study
+              </a>
             </div>
           </li>
         ))}
       </ul>
+
+      <Slot
+        className="mx-auto mt-20 w-full max-w-3xl"
+        id="WORK-FLOW-DIAGRAM"
+        type="illustration"
+        ratio="16:9"
+        description="Workflow map from the TL Ops case study — the operational process before and after digitisation, drawn as a clean node diagram."
+        path="/public/assets/work-flow-diagram.webp"
+        tone="quiet"
+      />
     </Section>
   );
 }
 
-/* -------------------------------------------------------- 7. services */
+/* ---------------------------------------------------------------- 5. process */
+
+const steps = [
+  {
+    n: "01",
+    name: "Understand",
+    body: "Explore user needs, business goals, existing workflows and the constraints that are actually non-negotiable.",
+    icon: { id: "PROCESS-01", description: "Spot icon: a magnifier over a process diagram.", path: "/public/assets/process-01-understand.webp" },
+  },
+  {
+    n: "02",
+    name: "Design",
+    body: "Map journeys, explore solutions, refine interactions, and validate the decisions that carry the most risk.",
+    icon: { id: "PROCESS-02", description: "Spot icon: overlapping frames with a drawn connector.", path: "/public/assets/process-02-design.webp" },
+  },
+  {
+    n: "03",
+    name: "Build",
+    body: "Translate designs into responsive interfaces, reusable components and interactions that behave correctly.",
+    icon: { id: "PROCESS-03", description: "Spot icon: three modular blocks assembling into one unit.", path: "/public/assets/process-03-build.webp" },
+  },
+  {
+    n: "04",
+    name: "Iterate",
+    body: "Evaluate usability, review the implementation, learn from feedback, and improve what the data points at.",
+    icon: { id: "PROCESS-04", description: "Spot icon: a loop arrow closing around a small interface frame.", path: "/public/assets/process-04-iterate.webp" },
+  },
+];
+
+function Process() {
+  return (
+    <Section id="process" label="My process" className="bg-g50">
+      <Eyebrow>My approach</Eyebrow>
+      <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+        From problem to production.
+      </h2>
+      <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-g600">
+        I combine product thinking, design craft and engineering to create interfaces
+        that are useful, consistent, and practical to build.
+      </p>
+      <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((s) => (
+          <li key={s.n} className="border-t border-g300 pt-6">
+            <IconSlot {...s.icon} ratio="1:1" />
+            <p className="mt-5 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">
+              {s.n}
+            </p>
+            <h3 className="mt-1.5 text-[17px] font-semibold tracking-tight">{s.name}</h3>
+            <p className="mt-2.5 text-[15px] leading-relaxed text-g600">{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
+  );
+}
+
+/* --------------------------------------------------------------- 6. services */
 
 const services = [
   {
-    name: "Marketing and product websites",
-    body: "The site that has to sell before anyone talks to you.",
-    icon: { id: "ICON-WEBSITE", description: "Painted spot icon: a single window pane with light falling through it.", path: "/public/assets/icon-website.webp" },
+    name: "Product design",
+    body: "Turning complex requirements and user workflows into intuitive interfaces, from early concepts through to detailed product experiences.",
+    icon: { id: "ICON-DESIGN", description: "Spot icon: a pen nib over a grid.", path: "/public/assets/icon-design.webp" },
   },
   {
-    name: "Web applications",
-    body: "Interfaces people use daily, designed and engineered as one job.",
-    icon: { id: "ICON-APP", description: "Painted spot icon: a small hinged wooden toolbox, open.", path: "/public/assets/icon-app.webp" },
+    name: "Frontend implementation",
+    body: "Bringing designs to life with responsive layouts, reusable components and carefully crafted interactions.",
+    icon: { id: "ICON-FRONTEND", description: "Spot icon: an angle bracket pair enclosing a layout frame.", path: "/public/assets/icon-frontend.webp" },
   },
   {
     name: "Design systems",
-    body: "A component library your own team can ship pages with, without me.",
-    icon: { id: "ICON-SYSTEM", description: "Painted spot icon: three modular wooden blocks stacked.", path: "/public/assets/icon-system.webp" },
-  },
-  {
-    name: "Redesign and rebuild",
-    body: "For a product that has outgrown the version it launched with.",
-    icon: { id: "ICON-REBUILD", description: "Painted spot icon: a plane shaving a curl from a timber edge.", path: "/public/assets/icon-rebuild.webp" },
-  },
-  {
-    name: "Audits and enhancement",
-    body: "A short, blunt read on what is costing you conversions or speed — then the fix.",
-    icon: { id: "ICON-AUDIT", description: "Painted spot icon: a brass calliper measuring a sheet of paper.", path: "/public/assets/icon-audit.webp" },
-  },
-  {
-    name: "Ongoing support",
-    body: "A standing monthly seat for whatever the roadmap needs next.",
-    icon: { id: "ICON-SUPPORT", description: "Painted spot icon: a watering can beside a small windowsill plant.", path: "/public/assets/icon-support.webp" },
+    body: "Building consistent design foundations and component libraries that make products easier to maintain and extend.",
+    icon: { id: "ICON-SYSTEM", description: "Spot icon: modular blocks of different widths that interlock.", path: "/public/assets/icon-system.webp" },
   },
 ];
 
 function Services() {
   return (
     <Section id="services" label="Services">
-      <Eyebrow>Services</Eyebrow>
+      <Eyebrow>How I can help</Eyebrow>
       <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-        Everything between the idea and the live product.
+        Better product experiences, from design to implementation.
       </h2>
-      <ul className="mt-12 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+      <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-g600">
+        I help teams improve digital products through thoughtful design and careful
+        implementation — design, implementation, or both, stated clearly up front.
+      </p>
+      <ul className="mt-12 grid gap-10 md:grid-cols-3">
         {services.map((s) => (
-          <li key={s.name} className="flex gap-4">
-            <IconSlot {...s.icon} type="icon" ratio="1:1" />
-            <div>
-              <h3 className="text-[15px] font-semibold tracking-tight">{s.name}</h3>
-              <p className="mt-1.5 text-[15px] leading-relaxed text-g600">{s.body}</p>
-            </div>
+          <li key={s.name}>
+            <IconSlot {...s.icon} ratio="1:1" />
+            <h3 className="mt-5 text-[17px] font-semibold tracking-tight">{s.name}</h3>
+            <p className="mt-2.5 text-[15px] leading-relaxed text-g600">{s.body}</p>
           </li>
         ))}
       </ul>
+      <div className="mt-12">
+        <Button href="#contact">Discuss a project</Button>
+      </div>
     </Section>
   );
 }
 
-/* --------------------------------------------------------- 8. breather */
+/* ------------------------------------------------------------- 7. breather */
 
 function Breather() {
   return (
@@ -392,193 +394,87 @@ function Breather() {
           id="BREATHER-SPOT"
           type="illustration"
           ratio="3:2"
-          description="Quiet spot scene: a half-drunk mug leaving a ring on a blueprint, a bulldog clip and a folded set of drawings beside it."
+          description="Quiet spot scene: a desk at rest — notebook, pencil and a closed laptop, drawn in the same line-and-wash style as the process icons."
           path="/public/assets/breather-spot.webp"
           className="w-full max-w-sm"
           tone="quiet"
         />
         <p className="mt-8 text-xl leading-relaxed font-medium tracking-tight text-pretty sm:text-2xl">
-          I take one or two projects at a time. That is not a limitation — it is the
-          whole reason the work is good and the date I give you is real.
+          The interesting problems are rarely visual. They are the ones where someone
+          has to do a complicated job, and the interface is in the way.
         </p>
       </div>
     </Section>
   );
 }
 
-/* ------------------------------------------------------ 9. engagements */
+/* ---------------------------------------------------------- 8. testimonials */
 
-const engagements = [
+/**
+ * Deliberately empty. The IA requires real names, roles and approved quotes, and
+ * explicitly forbids inventing them — so these are labelled slots awaiting real
+ * content, not placeholder quotes that could be mistaken for the real thing.
+ */
+const testimonialSlots = [
   {
-    name: "Focused project",
-    price: "From $6,000",
-    timing: "2–3 weeks",
-    for: "A site or landing experience that has to look like the tier you charge at.",
-    includes: [
-      "Up to 6 pages, designed and built",
-      "Copy direction and content structure",
-      "A CMS so you can edit it yourself",
-      "Performance and accessibility pass",
-    ],
-  },
-  {
-    name: "Product build",
-    price: "$14,000 – $30,000",
-    timing: "4–8 weeks",
-    for: "A full product site or web application, designed and engineered together.",
-    includes: [
-      "Discovery, scope and a fixed quote",
-      "Full design system and UI build",
-      "Application front-end engineering",
-      "Analytics and launch support",
-    ],
-    featured: true,
-  },
-  {
-    name: "Enhance or audit",
-    price: "From $2,500",
-    timing: "About a week",
-    for: "Something that already works but is slow, dated or leaking conversions.",
-    includes: [
-      "Measured read on what is actually wrong",
-      "The fixes, not just the findings",
-      "Speed and accessibility improvements",
-      "A written handover of what changed",
-    ],
-  },
-  {
-    name: "Standing seat",
-    price: "From $3,500 / month",
-    timing: "Monthly, no minimum term",
-    for: "A design engineer on call for whatever ships next.",
-    includes: [
-      "A set amount of senior time monthly",
-      "Design and engineering from one person",
-      "Weekly call, async the rest of the week",
-      "Priority on fixes and releases",
-    ],
-  },
-];
-
-function Engagements() {
-  return (
-    <Section id="engagements" label="Ways of working together">
-      <div className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <Eyebrow>Working together</Eyebrow>
-          <h2 className="mt-4 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-            Four ways in, with the numbers on the page.
-          </h2>
-        </div>
-        <p className="max-w-xs text-[15px] text-g600">
-          Every project is quoted at a fixed price against a fixed scope before any work
-          starts. The number you agree is the number you pay.
-        </p>
-      </div>
-
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {engagements.map((e) => (
-          <div
-            key={e.name}
-            className={`flex flex-col rounded-sm border p-6 ${
-              e.featured ? "border-ink bg-g50" : "border-g200"
-            }`}
-          >
-            <h3 className="text-[17px] font-semibold tracking-tight">{e.name}</h3>
-            <p className="mt-3 text-lg font-medium tracking-tight">{e.price}</p>
-            <p className="mt-1 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-              {e.timing}
-            </p>
-            <p className="mt-4 text-[15px] leading-relaxed text-g600">{e.for}</p>
-            <ul className="mt-5 space-y-2.5 border-t border-g200 pt-5 text-[15px] text-g600">
-              {e.includes.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-g400" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto pt-7">
-              <a
-                href="#contact"
-                className="text-[15px] underline underline-offset-4 hover:text-g600"
-              >
-                Start here
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-10 flex flex-col gap-6 border-t border-g200 pt-8 md:flex-row md:items-center">
-        <Slot
-          id="HANDOVER-SPOT"
-          type="illustration"
-          ratio="2:1"
-          description="Spot scene: a brass key and a signed handover note resting on a labelled flat-file drawer under the bench — the you-own-everything promise."
-          path="/public/assets/handover-spot.webp"
-          className="w-full md:w-64 md:shrink-0"
-          tone="quiet"
-        />
-        <p className="text-[15px] leading-relaxed text-g600">
-          <strong className="font-semibold text-ink">You own everything.</strong> Every
-          Figma file, repository and account is yours from day one. I build on standard,
-          widely used technology — no proprietary CMS, no lock-in — so you or any team
-          you hire later can pick the work up without me. Thirty days of post-launch
-          support is included either way.
-        </p>
-      </div>
-    </Section>
-  );
-}
-
-/* ----------------------------------------------------- 10. testimonials */
-
-const quotes = [
-  {
-    quote:
-      "We had been quoted twice as much by an agency that wanted twice as long. Bony did it in five weeks, and the person I spoke to was the person building it, every single time.",
-    name: "Operations lead",
-    role: "B2B SaaS platform",
+    theme: "Product collaboration",
+    needs: "A colleague or product manager on problem-solving and product thinking.",
     slot: {
-      id: "TESTIMONIAL-SPOT-01",
-      type: "illustration",
+      id: "TESTIMONIAL-01",
+      type: "product shot",
       ratio: "1:1",
-      description: "Small painted spot: a single desk chair turned toward the window, seen from behind — a client seat, no face.",
-      path: "/public/assets/testimonial-spot-01.webp",
+      description: "Approved headshot of the first referee, or their company mark if a photo is not permitted.",
+      path: "/public/assets/testimonial-01.webp",
     },
   },
   {
-    quote:
-      "The difference is that the designer was the developer. Nothing got watered down on the way to the build, and nothing came back three weeks later as impossible.",
-    name: "Founder",
-    role: "Professional services firm",
+    theme: "Design engineering",
+    needs: "An engineer on collaboration, implementation awareness and component thinking.",
     slot: {
-      id: "TESTIMONIAL-SPOT-02",
-      type: "illustration",
+      id: "TESTIMONIAL-02",
+      type: "product shot",
       ratio: "1:1",
-      description: "Small painted spot: two mugs on the windowsill beside a folded drawing — the weekly call, drawn as objects.",
-      path: "/public/assets/testimonial-spot-02.webp",
+      description: "Approved headshot of the second referee, or their company mark if a photo is not permitted.",
+      path: "/public/assets/testimonial-02.webp",
+    },
+  },
+  {
+    theme: "Ownership and delivery",
+    needs: "A manager or client on contribution and quality of work.",
+    slot: {
+      id: "TESTIMONIAL-03",
+      type: "product shot",
+      ratio: "1:1",
+      description: "Approved headshot of the third referee, or their company mark if a photo is not permitted.",
+      path: "/public/assets/testimonial-03.webp",
     },
   },
 ];
 
 function Testimonials() {
   return (
-    <Section id="testimonials" label="Client words">
-      <Eyebrow>Client words</Eyebrow>
-      <ul className="mt-10 grid gap-10 md:grid-cols-2">
-        {quotes.map((q) => (
-          <li key={q.slot.id} className="flex gap-6">
-            <Slot {...q.slot} className="w-20 shrink-0 sm:w-24" tone="quiet" />
-            <figure>
-              <blockquote className="text-[17px] leading-relaxed text-pretty">
-                “{q.quote}”
-              </blockquote>
-              <figcaption className="mt-4 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-                {q.name} · {q.role}
-              </figcaption>
-            </figure>
+    <Section id="testimonials" label="Testimonials">
+      <Eyebrow>Kind words</Eyebrow>
+      <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+        What others say.
+      </h2>
+      <ul className="mt-12 grid gap-10 md:grid-cols-3">
+        {testimonialSlots.map((t) => (
+          <li key={t.slot.id}>
+            <Slot {...t.slot} className="w-16 sm:w-20" tone="quiet" />
+            <p className="mt-5 font-mono text-[11px] tracking-[0.12em] text-g500 uppercase">
+              {t.theme}
+            </p>
+            <div className="mt-3 rounded-sm border border-dashed border-g400 bg-g100 p-4">
+              <p className="font-mono text-[10px] font-semibold tracking-[0.12em] text-g700 uppercase">
+                Quote pending
+              </p>
+              <p className="mt-2 text-[14px] leading-snug text-g600">{t.needs}</p>
+              <p className="mt-2 text-[13px] leading-snug text-g500">
+                Real name, role and organisation required. Do not publish this section
+                until at least two are approved.
+              </p>
+            </div>
           </li>
         ))}
       </ul>
@@ -586,40 +482,102 @@ function Testimonials() {
   );
 }
 
-/* -------------------------------------------------------------- 11. FAQ */
+/* ----------------------------------------------------------------- 9. about */
 
-function Faq() {
+function About() {
   return (
-    <Section id="faq" label="Frequently asked questions">
-      <div className="grid gap-12 md:grid-cols-[22rem_1fr] md:gap-16">
+    <Section id="about" label="About me">
+      <div className="grid gap-10 md:grid-cols-[1fr_20rem] md:gap-16">
         <div>
-          <Eyebrow>Questions</Eyebrow>
+          <Eyebrow>About me</Eyebrow>
           <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-            The things people ask before they email me.
+            A designer who cares about how things work.
           </h2>
+          <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-g600">
+            I&rsquo;m a {SHOW_LOCATION ? `${LOCATION}-based ` : ""}designer interested in
+            building useful, thoughtful digital products. My work sits at the
+            intersection of product design, interaction design and frontend engineering.
+          </p>
+          <p className="mt-4 max-w-xl text-[17px] leading-relaxed text-g600">
+            I enjoy simplifying complex workflows, exploring how interfaces behave, and
+            turning design ideas into working experiences. Outside work: photography,
+            travelling, and noticing the small details of ordinary things.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <Button href="/about">More about me</Button>
+            <a
+              href="/resume.pdf"
+              className="text-[15px] text-g600 underline underline-offset-4 hover:text-ink"
+            >
+              View résumé
+            </a>
+          </div>
+        </div>
+        <div className="space-y-6">
           <Slot
-            id="FAQ-SPOT"
+            id="ABOUT-PORTRAIT"
+            type="product shot"
+            ratio="4:5"
+            description="Portrait of Bony — natural light, plain background, looking at camera. One real photograph, not an illustration."
+            path="/public/assets/about-portrait.webp"
+          />
+          <Slot
+            id="ABOUT-SPOT"
             type="illustration"
-            ratio="1:1"
-            description="Spot scene: a wall-pinned note card with a question mark drawn on it, a bulldog clip and a pencil hanging on a string beside it."
-            path="/public/assets/faq-spot.webp"
-            className="mt-8 w-full max-w-[14rem]"
+            ratio="3:2"
+            description="Small spot tying the personal note to the work: a camera resting beside a notebook, same line-and-wash style as the icons."
+            path="/public/assets/about-spot.webp"
             tone="quiet"
           />
         </div>
-        <div className="divide-y divide-g200 border-t border-g200">
+      </div>
+    </Section>
+  );
+}
+
+/* --------------------------------------------------------------- 10. contact */
+
+function Contact() {
+  return (
+    <Section id="contact" label="Contact" className="bg-g50">
+      <div className="max-w-3xl">
+        <Eyebrow>Let&rsquo;s work together</Eyebrow>
+        <h2 className="mt-4 text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl">
+          Have a complex product problem to solve?
+        </h2>
+        <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
+          I&rsquo;m interested in thoughtful product challenges, design engineering roles,
+          and collaborations that bring better digital experiences to life.
+        </p>
+        <div className="mt-9 flex flex-wrap items-center gap-4">
+          <Button href={`mailto:${site.email}`}>Get in touch</Button>
+          <Button href="/resume.pdf" variant="outline">
+            View my résumé
+          </Button>
+        </div>
+        <p className="mt-6 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">
+          Replies within {site.replyWindow}
+        </p>
+      </div>
+
+      {/* Visible Q&A, mirrored as FAQPage structured data in the layout. */}
+      <div className="mt-16 border-t border-g200 pt-12">
+        <h3 className="text-lg font-semibold tracking-tight">
+          Before you write — the things people usually ask.
+        </h3>
+        <div className="mt-6 max-w-3xl divide-y divide-g200 border-t border-g200">
           {faqs.map((f) => (
-            <details key={f.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-[17px] font-medium tracking-tight">
-                <h3 className="text-[17px] font-medium">{f.q}</h3>
+            <details key={f.q} className="group py-4">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
+                <h4 className="text-[16px] font-medium">{f.q}</h4>
                 <span
                   aria-hidden="true"
-                  className="mt-1 font-mono text-g500 group-open:rotate-45 transition-transform"
+                  className="mt-1 font-mono text-g500 transition-transform group-open:rotate-45"
                 >
                   +
                 </span>
               </summary>
-              <p className="mt-3 max-w-2xl text-[16px] leading-relaxed text-g600">
+              <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-g600">
                 {f.a}
               </p>
             </details>
@@ -630,41 +588,12 @@ function Faq() {
   );
 }
 
-/* --------------------------------------------------------- 12. closing CTA */
-
-function ClosingCta() {
-  return (
-    <Section id="contact" label="Start a project" className="bg-g50">
-      <div className="mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl leading-tight font-semibold tracking-tight text-balance sm:text-4xl md:text-5xl">
-          Tell me what you are building. I will tell you what it takes.
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-g600">
-          Send a couple of lines about the product and the deadline. You will get a real
-          reply from me within one business day — a scope, a price band and a start
-          date, or an honest no.
-        </p>
-        <div className="mt-9 flex flex-wrap justify-center gap-4">
-          <Button href="mailto:hello@bonyamin.com">Start a project</Button>
-          <Button href="#work" variant="outline">
-            See the work first
-          </Button>
-        </div>
-        <p className="mt-6 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">
-          Replies within 1 business day · fixed price before work starts
-        </p>
-      </div>
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------- 13. footer */
+/* ---------------------------------------------------------------- 11. footer */
 
 function Footer() {
   const cols = [
-    ["Practice", [["Work", "/work"], ["Services", "/services"], ["Process", "/process"], ["About", "/about"]]],
-    ["Buy", [["Engagement & pricing", "/pricing"], ["FAQ", "/faq"], ["Start a project", "/contact"]]],
-    ["More", [["Journal", "/journal"], ["Privacy", "/privacy"], ["Terms", "/terms"]]],
+    ["Site", [["Work", "#work"], ["Services", "#services"], ["About", "#about"], ["Testimonials", "#testimonials"]]],
+    ["Elsewhere", [["Résumé", "/resume.pdf"], ["LinkedIn", "https://linkedin.com/in/"], ["GitHub", "https://github.com/"]]],
   ];
   return (
     <footer className="border-t border-g200 px-5 pt-20 pb-10 sm:px-8">
@@ -673,23 +602,21 @@ function Footer() {
           id="FOOTER-SCENE"
           type="illustration"
           ratio="16:5"
-          description="Wide closing view of the same room at night — one lamp lit over the bench, the work left mid-flow, lit windows across the rooftops beyond."
+          description="Wide closing scene: a desk at the end of the day, screen dark, notebook open — line-and-wash, matching the spot illustrations."
           path="/public/assets/footer-scene.webp"
-          className="w-full"
         />
 
-        <div className="mt-14 grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+        <div className="mt-14 grid gap-10 md:grid-cols-[1.4fr_repeat(2,1fr)]">
           <div>
-            <p className="text-[15px] font-semibold tracking-tight">Bony Amin</p>
-            <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-g600">
-              Design engineer. I help founders and companies build, modify and enhance
-              their digital products.
+            <p className="text-[15px] font-semibold tracking-tight">{site.name}</p>
+            <p className="mt-1 font-mono text-[11px] tracking-[0.14em] text-g500 uppercase">
+              {site.role}
             </p>
             <a
-              href="mailto:hello@bonyamin.com"
+              href={`mailto:${site.email}`}
               className="mt-4 inline-block text-[15px] underline underline-offset-4 hover:text-g600"
             >
-              hello@bonyamin.com
+              {site.email}
             </a>
           </div>
           {cols.map(([title, links]) => (
@@ -699,7 +626,7 @@ function Footer() {
               </p>
               <ul className="mt-4 space-y-2.5">
                 {links.map(([label, href]) => (
-                  <li key={href}>
+                  <li key={label}>
                     <a href={href} className="text-[15px] text-g600 hover:text-ink">
                       {label}
                     </a>
@@ -711,7 +638,7 @@ function Footer() {
         </div>
 
         <p className="mt-14 border-t border-g200 pt-6 font-mono text-[11px] tracking-[0.1em] text-g500 uppercase">
-          © {new Date().getFullYear()} Bony Amin · Design engineer · Working with clients worldwide
+          © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
       </div>
     </footer>
@@ -726,16 +653,14 @@ export default function Home() {
       <Navigation />
       <main id="main">
         <Hero />
-        <TrustStrip />
-        <Statement />
-        <Features />
+        <Credibility />
         <Work />
+        <Process />
         <Services />
         <Breather />
-        <Engagements />
         <Testimonials />
-        <Faq />
-        <ClosingCta />
+        <About />
+        <Contact />
       </main>
       <Footer />
     </>

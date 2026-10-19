@@ -1,52 +1,53 @@
 # Bony Amin — Design Engineer
 
-> I'm a design engineer. I help founders and companies build, modify and enhance their
-> digital products. Design and engineering are both done by me, so there is no hand-off
-> between the design and the code — and nothing gets lost in the middle.
+> I'm a design engineer. I bring product design and frontend engineering together to
+> turn complex workflows into intuitive, polished, working software. I do both the
+> design and the implementation, so what ships is what was designed.
 
 ## Who I work with
-Businesses that already have a product or website, or want to build a new one entirely.
-Founders, product leads and marketing owners commissioning a build.
+Companies looking for someone who bridges product design and frontend engineering,
+either as a team member or on freelance and contract projects. My product background is
+in logistics, transportation and operational systems.
 
-## The three jobs I take
-- Build — a new site, product or application from nothing.
-- Modify — a redesign or rebuild of something that exists but no longer fits.
-- Enhance — performance, accessibility and polish work on something already in use.
-
-## What makes this different
-One senior person covering design and engineering, so there is no account layer, no
-hand-off week and no translation loss. Fixed price against fixed scope before work
-starts. The client owns every design file, repository and account from day one. No
-proprietary CMS and no lock-in. I work inside the client's existing stack and brand
-rather than insisting on a rebuild.
+## Experience
+Around five years of product design work, spanning logistics, transportation and digital
+products, collaborating with product and engineering teams, with a focus on
+design-to-development implementation.
 
 ## Services
-- Marketing and product websites
-- Web applications and product interfaces
-- Design systems
-- Redesign and rebuild of existing products
-- Performance and accessibility enhancement
-- Design and engineering audits
-- Ongoing monthly design and development support
+- Product design — turning complex requirements and user workflows into intuitive
+  interfaces, from early concepts to detailed product experiences.
+- Frontend implementation — responsive layouts, reusable components and carefully
+  crafted interactions.
+- Design systems — consistent design foundations and component libraries that make
+  products easier to maintain and extend.
 
-## Engagements
-- Focused project — from $6,000, 2 to 3 weeks.
-- Product build — $14,000 to $30,000, 4 to 8 weeks.
-- Enhancement or audit — from $2,500, about a week.
-- Ongoing support — from $3,500 per month, no minimum term.
+## Process
+1. Understand — user needs, business goals, existing workflows and real constraints.
+2. Design — map journeys, explore solutions, refine interactions, validate key decisions.
+3. Build — responsive interfaces, reusable components, correct interaction behaviour.
+4. Iterate — evaluate usability, review implementation, learn from feedback, improve.
 
-## Working practice
-One or two projects at a time. Asynchronous by default with a weekly live call. Replies
-within one business day. Thirty days of post-launch support included with every project.
+## Selected work
+- TL Ops — Challan Workflow. Enterprise UX, logistics, workflow design. Digitising the
+  challan submission and review process into a structured digital experience. Shipped.
+- Truck Lagbe — Home Shifting. Transportation, service design, mobile UX. Integrating a
+  home-shifting service into an existing transportation platform, connecting service
+  discovery to booking. Shipped.
+- Shohoz — Bus Booking Redesign. Travel, interaction design, mobile UX. A self-directed
+  redesign of journey clarity, seat selection, visual hierarchy and accessibility.
+  Self-directed redesign, not shipped production work.
+
+## Availability
+Open to design engineering roles on product teams, and to freelance and contract
+projects covering design, implementation, or both. Replies within one business day.
 
 ## Key pages
-- / — homepage: positioning, selected work, services, engagement terms, FAQ
+- / — homepage: positioning, experience, selected work, process, services, about, contact
 - /work — full project index
-- /services — services, split by build, modify and enhance
-- /process — named stages, durations and deliverables
-- /pricing — price bands and ways of working
-- /faq — answers to common questions
-- /contact — start a project
+- /services — what I help with
+- /about — background and interests
+- /contact — get in touch
 
 ## Contact
 hello@bonyamin.com

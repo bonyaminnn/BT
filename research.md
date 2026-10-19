@@ -70,117 +70,119 @@ Creative, Brand VM, Mag Cloud.
 
 ## 2. My audience
 
-**Who they are:** founders, product leads and marketing owners at businesses that
-already have a product or site, or are about to build one. They're commissioning a
-build, not browsing for inspiration. They arrive from a referral, a search or a
-LinkedIn profile — and they're comparing me against an agency and a cheap freelancer in
-the same afternoon.
+The IA names two audiences and asks that one homepage serve both. That is the right
+call, and it works because their doubts overlap more than their goals do.
 
-**What they want**
-- One person who can take a thing from blank page to live, without a translator between
-  design and code.
-- Speed they can plan around — a date, not a vibe.
-- Work that looks like the tier they want to be perceived as.
-- A named human who answers, not a ticket queue.
-- To be told what they actually need, including when the answer is "less than you asked
-  for".
-- Someone who can work with what already exists — their stack, their half-built product,
-  their existing brand — rather than insisting on a rebuild.
+### A. Hiring teams (employers)
+**What they want:** evidence of how you think, collaborate and make trade-offs on real
+shipped products. Proof you can hold both design and implementation without being
+mediocre at either. Signs you work well inside a product team rather than around it.
 
-**What they doubt** (the real buying friction is risk, not logic)
-- *Capacity.* "One person? What happens when you're busy, ill, or gone?" This is the
-  single loudest objection and the page must answer it without defensiveness.
-- *Disappearance.* The quiet fear in this market: paid, then ghosted.
-- *Depth.* "A designer who codes — is either half actually good, or both mediocre?"
-- *Scale.* "Can one person handle something this big?"
-- *Price opacity.* No number on the page reads as "it'll be whatever they can get."
-- *Process.* No documented process is a standard buyer red flag.
-- *Handover.* Platform lock-in, a proprietary CMS, being stuck with me forever.
+**What they doubt:**
+- *Depth.* "A designer who codes — is either half actually good?" This is the central
+  risk of the design-engineer label, and the work section has to settle it.
+- *Attribution.* "This was a team product. What did *he* do?" The IA is right to insist
+  on stating individual contribution; vagueness here reads as inflation.
+- *Shipped vs. concept.* A redesign exploration presented like production work destroys
+  trust the moment it's noticed. Hence the visible tag on every project card.
+- *Seniority.* Around five years places you mid-level. Depth of thinking is what moves
+  that perception, not claimed scope.
+
+**What makes them hire:** one case study that shows a real operational problem, the
+decisions taken, and the implementation. A working demo they can click. Named referees.
+
+### B. Freelance and contract clients
+**What they want:** someone who can take a product problem and return a working
+interface, without a translator in the middle. A clear read on whether an engagement is
+design, build, or both. Someone who works inside the stack they already have.
+
+**What they doubt:**
+- *Capacity.* "One person — what happens when you're busy?"
+- *Disappearance.* The quiet fear in this market: paid, then silence.
+- *Scope honesty.* Whether they'll be told the cheaper answer when it exists.
 - *Reachability.* Remote and async — "will I be able to get hold of him?"
 
-**What makes them buy**
-- A portfolio piece that looks like their problem. The portfolio is where they ask
-  "have you done something like what I need?"
-- Named testimonials with real detail — not anonymous praise.
-- A visible process with stage names and durations.
-- A price band stated out loud, so they can self-qualify before they email.
-- Objection-handling placed *at* the decision point: response time next to the CTA,
-  "you own everything" next to the price, "no lock-in" in the FAQ.
-- The site itself being obviously well made. For this buyer the site *is* the case study.
+**What makes them buy:** work that resembles their problem, a visible process with named
+stages, a stated response time, and the services split clearly enough that they can tell
+what they're buying.
+
+### Where the two overlap
+Both want the same two things: **proof of real shipped work with your contribution
+stated honestly**, and **evidence that the design and the build are genuinely the same
+pair of hands.** Everything on the homepage serves those two, which is why one page can
+carry both audiences without splitting.
 
 ---
 
 ## 3. My positioning
 
-> **One sentence:** You pick me because I'm a design engineer — one person who designs
-> *and* ships — so whether you're building something new, modifying what you have, or
-> enhancing what already works, it gets handled end to end by the person who actually
-> makes it, with nothing lost between the design and the code.
+> **One sentence:** You pick me because I'm a design engineer who has shipped
+> operational products — I bring product design and frontend engineering together, so
+> complex workflows arrive as intuitive, working software instead of as a handoff
+> document.
 
-Supporting frame: *studio-grade work, maker-grade speed.* Agencies have the polish and
-the overhead. Freelancers have the speed and the gaps. I'm deliberately one senior pair
-of hands covering both halves of the job — which is why there's no hand-off week, no
-account layer, and no "that isn't technically possible" three weeks in.
-
-The three jobs I take, named plainly because they're how buyers self-identify:
-**build** something new, **modify** what exists, **enhance** what's already working.
+The differentiator is not "designer who also codes" — that claim is now common and
+unverifiable. It's **the domain plus the pairing**: operational and transactional
+products (logistics, transportation, booking) where the hard part is that someone has a
+complicated job to do and the interface is in the way. Taste alone doesn't solve those;
+understanding the workflow does, and then being able to build it keeps the solution
+intact all the way to production.
 
 ---
 
 ## 4. Three messages the homepage must land
 
 **Message 1 — I design it and I build it.**
-One person, both halves, from first sketch to live product. Nothing gets lost between
-the Figma file and production because there's no hand-off in the middle.
-*Claimed in the hero, proven in the work cards.*
+Product design and frontend engineering in one person, so nothing is lost between the
+design file and production.
+*Claimed in the hero and the expertise line; proven by the work cards and the lab demos.*
 
-**Message 2 — Build, modify or enhance — I meet your product where it is.**
-A new product from nothing, a redesign of something tired, or a performance and polish
-pass on something that already earns. You don't have to start over to work with me.
-*Claimed in the statement section, proven in the three feature blocks.*
+**Message 2 — I've shipped real operational products.**
+TL Ops, Truck Lagbe — workflow and booking systems that real people use for work, with
+my contribution stated plainly and concepts labelled as concepts.
+*Claimed in the credibility strip; proven in selected work.*
 
-**Message 3 — Senior work, with the risk taken out.**
-Fixed scope, named stages, a stated price band, thirty days of post-launch support, and
-you own every file and repository. The questions this buyer is afraid to ask get
-answered on the page before they have to ask them.
-*Claimed in the engagement section, proven in the FAQ.*
+**Message 3 — I work inside what you already have.**
+Your stack, your design foundations, your existing product. Design, implementation, or
+both — named up front, with a process that has stages and a response time.
+*Claimed in services; proven in process and the contact Q&A.*
 
-Under-5-seconds test: the hero must deliver Message 1 alone. Messages 2 and 3 land
-within three scrolls.
+Under-5-seconds test: the hero delivers Message 1 alone. Messages 2 and 3 land within
+three scrolls.
 
 ---
 
-## 5. The illustration world
+## 5. The visual world
 
-**One place: the workbench.**
+**The IA changes this, correctly.** It asks for the hero to be "a real product interface
+or interactive demonstration", and its content principles require real screenshots and
+working demos. That overrides an all-illustration treatment: for this audience, the
+screenshot *is* the credential, and replacing it with artwork would hide the only
+evidence that matters.
 
-Every illustration in the brand is a scene from, or an object on, a single imagined
-workspace — one long workbench in a quiet upstairs room, where the drawing tools and the
-building tools share the same surface. Wide scenes show the whole bench and the room
-around it, with tall windows onto city rooftops at different hours. Mid-size scenes show
-one stretch of it: the drawing end with sketchbook and calliper, the building end with
-screen and keyboard, the shelf of labelled boxes, the plan chest beneath. Spot
-illustrations are the small objects that live there: a pencil stub, a bulldog clip, a
-paper aeroplane, a mug ring on a blueprint, a brass key, a plant on the windowsill.
+So the visual system is now two layers, with a clear rule for which does what.
 
-Nothing leaves that room. No abstract gradients, no generic tech iconography, no
-dashboards floating in space — that single-room constraint is the only reason twenty-odd
-assets can be generated as one coherent set.
+**Layer one — product truth (the load-bearing layer).** Real interface captures:
+the hero, the three project images, the workflow diagram, the logo row, the portrait.
+Shot on a consistent neutral ground, same device framing throughout, same crop logic,
+no gradient backdrops or floating perspective mockups. Annotation only where it explains
+a decision. If confidentiality blocks a screen, redraw it as a faithful schematic rather
+than substituting something prettier.
 
-**One consistent style.** Soft watercolour washes over fine, slightly imperfect ink
-linework. Warm paper-white ground, visible paper grain, pigment pooling at the edges of
-each wash, generous negative space, no hard frame around the composition. A restrained
-near-monochrome palette of warm greys and graphite with a single muted accent used
-sparingly. Soft natural daylight from one consistent direction — window light from the
-upper left. A person appears rarely and only as one simplified figure seen from behind
-or in silhouette, never with a detailed face, so the work on the bench stays the subject.
+**Layer two — the drawn layer (the connective tissue).** A small, restrained set of
+line-and-wash spot drawings: the four process icons, the three service icons, the
+breather, the About spot, the footer scene. These exist to pace the page and to carry
+the sections that have no product to show.
 
-**How it connects to my story.** The workbench *is* the positioning, drawn. One surface,
-one pair of hands, and both crafts laid out on it: the sketchbook is an arm's length
-from the keyboard, so the design and the build are visibly the same job in the same
-room — there is no hand-off because there is nowhere for a hand-off to happen. The bench
-also carries the build/modify/enhance story without a word: a thing being made from
-stock, a thing being taken apart and refitted, a thing being sharpened and oiled. The
-hand-painted medium argues for care and human authorship in a category drowning in
-generated gloss, and a room that moves from morning light to a single lit lamp at night
-gives me a quiet way to narrate process down the page: understand, design, build, ship.
+**One consistent style for layer two: the desk.** Every drawn asset is an object from one
+imagined desk — notebook, pencil, magnifier, modular blocks, loop arrow, camera, closed
+laptop. Fine ink linework with a single soft grey wash, warm paper ground, no colour
+beyond one restrained accent, light from a consistent direction. Flat and quiet, never
+decorative or whimsical: these sit next to screenshots of enterprise software and must
+not fight them.
+
+**How it connects to the story.** The screenshots prove the engineering half; the drawn
+objects are the design half, and they're deliberately *tools* rather than ornament —
+things used to make something, which is the whole claim. The camera in the About spot is
+the one personal note, tying the stated interest in photography to the habit the work
+depends on: noticing details other people walk past.
