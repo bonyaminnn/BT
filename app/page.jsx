@@ -55,44 +55,7 @@ function Hero() {
   );
 }
 
-/* ----------------------------------------------------- 3. credibility strip */
-
-function Credibility() {
-  const facts = [
-    ["Experience", `~${site.yearsExperience} years`],
-    ["Domains", "Logistics · transportation · digital products"],
-    ["Works with", "Product and engineering teams"],
-    ["Focus", "Design-to-development implementation"],
-  ];
-  return (
-    <Section id="credibility" label="Experience and expertise" className="border-t-0 bg-g50">
-      <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-        Product work on operational systems people use to do their jobs.
-      </h2>
-      <dl className="mt-10 grid grid-cols-1 gap-x-8 gap-y-7 border-t border-g200 pt-8 sm:grid-cols-2 lg:grid-cols-4">
-        {facts.map(([k, v]) => (
-          <div key={k}>
-            <dt className="font-mono text-[10px] tracking-[0.14em] text-g500 uppercase">
-              {k}
-            </dt>
-            <dd className="mt-1.5 text-[15px] font-medium text-ink">{v}</dd>
-          </div>
-        ))}
-      </dl>
-      <Slot
-        className="mt-10 w-full"
-        id="CRED-LOGOS"
-        type="product shot"
-        ratio="8:1"
-        description="Quiet row of company or product marks from real work — add only the ones cleared for publication, otherwise delete this slot."
-        path="/public/assets/cred-logos.webp"
-        tone="quiet"
-      />
-    </Section>
-  );
-}
-
-/* ------------------------------------------------------------ 4. selected work */
+/* ------------------------------------------------------------ 3. selected work */
 
 function Work() {
   return (
@@ -151,7 +114,7 @@ function Work() {
   );
 }
 
-/* ----------------------------------------------------------------- 5. ticker */
+/* ----------------------------------------------------------------- 4. ticker */
 
 function Details() {
   return (
@@ -172,7 +135,7 @@ function Details() {
   );
 }
 
-/* ---------------------------------------------------------------- 6. process */
+/* ---------------------------------------------------------------- 5. process */
 
 const steps = [
   {
@@ -227,7 +190,7 @@ function Process() {
   );
 }
 
-/* --------------------------------------------------------------- 7. services */
+/* --------------------------------------------------------------- 6. services */
 
 const services = [
   {
@@ -278,31 +241,7 @@ function Services() {
   );
 }
 
-/* ------------------------------------------------------------- 8. breather */
-
-function Breather() {
-  return (
-    <Section id="breather" label="Interlude" className="bg-g50">
-      <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-        <Slot
-          id="BREATHER-SPOT"
-          type="illustration"
-          ratio="3:2"
-          description="Quiet spot scene: a desk at rest — notebook, pencil and a closed laptop, drawn in the same line-and-wash style as the process icons."
-          path="/public/assets/breather-spot.webp"
-          className="w-full max-w-sm"
-          tone="quiet"
-        />
-        <p className="mt-8 text-xl leading-relaxed font-medium tracking-tight text-pretty sm:text-2xl">
-          The interesting problems are rarely visual. They are the ones where someone
-          has to do a complicated job, and the interface is in the way.
-        </p>
-      </div>
-    </Section>
-  );
-}
-
-/* ---------------------------------------------------------- 9. testimonials */
+/* ---------------------------------------------------------- 7. testimonials */
 
 /**
  * Deliberately empty. The IA requires real names, roles and approved quotes, and
@@ -375,7 +314,7 @@ function Testimonials() {
   );
 }
 
-/* ----------------------------------------------------------------- 10. about */
+/* ----------------------------------------------------------------- 8. about */
 
 function About() {
   return (
@@ -395,14 +334,10 @@ function About() {
             turning design ideas into working experiences. Outside work: photography,
             travelling, and noticing the small details of ordinary things.
           </p>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Button href="/about">More about me</Button>
-            <a
-              href="/resume.pdf"
-              className="text-[15px] text-g600 underline underline-offset-4 hover:text-ink"
-            >
-              View résumé
-            </a>
+          <div className="mt-9">
+            <Button href="/resume.pdf" download>
+              Download résumé
+            </Button>
           </div>
         </div>
         <div className="space-y-6">
@@ -427,7 +362,7 @@ function About() {
   );
 }
 
-/* --------------------------------------------------------------- 11. contact */
+/* --------------------------------------------------------------- 9. contact */
 
 function Contact() {
   return (
@@ -487,12 +422,10 @@ export default function Home() {
       <SiteHeader />
       <main id="main">
         <Hero />
-        <Credibility />
         <Work />
         <Details />
         <Process />
         <Services />
-        <Breather />
         <Testimonials />
         <About />
         <Contact />

@@ -1,6 +1,6 @@
 # Asset briefs — Bony Amin homepage
 
-20 slots, in two layers. Every slot is already wired into the wireframe at the path
+25 slots, in two layers. Every slot is already wired into the wireframe at the path
 below — drop the real file in and the layout does not change.
 
 **Why two layers.** The IA requires the hero to be a real product interface and requires
@@ -28,7 +28,6 @@ type treatment every time. Export at 2x, `.webp`, long edge 2400px.
 | ID | Path | Ratio | Type | What to capture |
 |---|---|---|---|---|
 | `HERO-PRODUCT` | `/public/assets/hero-product.webp` | 16:9 | product shot | The single most legible screen from shipped work — the TL Ops challan workflow or the Truck Lagbe booking flow. It has to read at a glance as *real operational software*, so pick density over beauty. This is the five-second proof of the headline. |
-| `CRED-LOGOS` | `/public/assets/cred-logos.webp` | 8:1 | product shot | A quiet single row of company or product marks, grayscale, optically balanced for size. **Only marks cleared for publication.** If none are cleared, delete this slot — an empty logo row is worse than no logo row. |
 | `WORK-01` | `/public/assets/work-01-tlops.webp` | 16:10 | product shot | TL Ops challan submission and review — the primary workflow screen. Show the structure: list, status, review state. |
 | `WORK-02` | `/public/assets/work-02-trucklagbe.webp` | 16:10 | product shot | Truck Lagbe home shifting — two or three mobile frames showing service discovery leading into booking. The sequence is the point. |
 | `WORK-03` | `/public/assets/work-03-shohoz.webp` | 16:10 | product shot | Shohoz seat selection, before and after, as mobile frames. Label which is which; this project is tagged a self-directed redesign on the page and the image must not blur that. |
@@ -129,18 +128,6 @@ invention.
 
 | | |
 |---|---|
-| **ID** | `BREATHER-SPOT` |
-| **Path** | `/public/assets/breather-spot.webp` |
-| **Ratio** | 3:2 |
-| **Type** | illustration |
-
-**Brief.** A desk at rest: a closed laptop, a notebook with a pencil laid across it,
-nothing else. Most of the frame is bare warm paper. Deliberately still and
-under-filled — this asset's only job is to let the eye rest between the services pitch
-and the proof. Accent on the pencil.
-
-| | |
-|---|---|
 | **ID** | `ABOUT-SPOT` |
 | **Path** | `/public/assets/about-spot.webp` |
 | **Ratio** | 3:2 |
@@ -172,7 +159,6 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | ID | Path | Ratio | Type | Layer |
 |---|---|---|---|---|
 | HERO-PRODUCT | /public/assets/hero-product.webp | 16:9 | product shot | 1 |
-| CRED-LOGOS | /public/assets/cred-logos.webp | 8:1 | product shot | 1 |
 | WORK-01 | /public/assets/work-01-tlops.webp | 16:10 | product shot | 1 |
 | WORK-02 | /public/assets/work-02-trucklagbe.webp | 16:10 | product shot | 1 |
 | WORK-03 | /public/assets/work-03-shohoz.webp | 16:10 | product shot | 1 |
@@ -185,7 +171,6 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | ICON-APP | /public/assets/icon-app.webp | 1:1 | icon | 2 |
 | ICON-FRONTEND | /public/assets/icon-frontend.webp | 1:1 | icon | 2 |
 | ICON-SYSTEM | /public/assets/icon-system.webp | 1:1 | icon | 2 |
-| BREATHER-SPOT | /public/assets/breather-spot.webp | 3:2 | illustration | 2 |
 | TESTIMONIAL-01 | /public/assets/testimonial-01.webp | 1:1 | product shot | 1 |
 | TESTIMONIAL-02 | /public/assets/testimonial-02.webp | 1:1 | product shot | 1 |
 | TESTIMONIAL-03 | /public/assets/testimonial-03.webp | 1:1 | product shot | 1 |
@@ -199,9 +184,9 @@ other drawn asset came from. Accent on the warm core of the lamp.
 | TICKER-06 | /public/assets/ticker-06.webp | 4:3 | product shot | 1 |
 | FOOTER-SCENE | /public/assets/footer-scene.webp | 16:5 | illustration | 2 |
 
-**Total: 27 slots** — 15 real captures (layer 1) and 12 drawn assets (layer 2). Only
+**Total: 25 slots** — 14 real captures (layer 1) and 11 drawn assets (layer 2). Only
 layer 2 is generated as a set.
 
-The original brief planned around 20 assets; the ticker and the fourth service icon take it to 27. All six additions
+The original brief planned around 20 assets; the ticker and the fourth service icon take it to 25. All six additions
 are captures of work that already exists, so nothing new has to be generated — only
 screenshotted and cropped.

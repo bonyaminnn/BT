@@ -45,29 +45,25 @@ The IA's nine-part structure, with one breather and one Q&A block added. Compreh
 budget: **the hero alone must work in 5 seconds, and the three key messages must land
 within 3 scrolls.**
 
-1. **Navigation** — name and role, four links, one CTA. Sticky.
+1. **Navigation** — name, four links, one CTA. Sticky.
 2. **Hero** — headline, one supporting line, two CTAs ("See my work" primary, "Download
    résumé" secondary), a **USP strip** (Design engineer · Simplifying complex systems ·
    B2B SaaS · Dashboards & internal tools), and a wide **real product interface** rather
    than an illustration. *(Scroll 1)*
-3. **Credibility** — four facts: years, domains, who I work with, focus. Plus an
-   optional logo row. Backs the hero claim immediately. *(Scroll 1–2)*
-4. **Selected work** — three projects, alternating image and text, each tagged *Shipped
+3. **Selected work** — three projects, alternating image and text, each tagged *Shipped
    product* or *Self-directed redesign*, each stating my actual contribution. Closes
    with the TL Ops workflow diagram. *(Scroll 2–3)*
-5. **Miscellaneous ticker** — **addition.** A horizontally scrolling row of detail
+4. **Miscellaneous ticker** — **addition.** A horizontally scrolling row of detail
    crops: tables, empty states, error copy, component states. Titled at body size, not as
    a section heading, so the row stays the subject. Gives the page one piece of motion.
    Pauses on hover and focus; stops entirely under `prefers-reduced-motion`. *(Scroll 3)*
-6. **Process** — Understand, Design, Build, Iterate. Four steps with spot icons. The
+5. **Process** — Understand, Design, Build, Iterate. Four steps with spot icons. The
    numbering is real sequence, not decoration. *(Scroll 3–4)*
-7. **Services** — website design and development, application design, frontend implementation, design systems. One CTA.
-8. **Breather** — **addition.** One spot illustration and a single line, between the
-   selling and the proof. The reference site's rhythm depends on this kind of pause.
-9. **Testimonials** — three themed slots: product collaboration, design engineering,
+6. **Services** — website design and development, application design, frontend implementation, design systems. One CTA.
+7. **Testimonials** — three themed slots: product collaboration, design engineering,
    ownership and delivery. Currently rendered as *quote pending* placeholders.
-10. **About** — personal story, interests, portrait, résumé link.
-11. **Contact** — the closing CTA, plus **a visible six-question Q&A** (addition). This
+8. **About** — personal story, interests, portrait, one résumé download.
+9. **Contact** — the closing CTA, plus **a visible six-question Q&A** (addition). This
     is where AEO is earned: structured data describing answers a visitor can't see
     violates search guidelines, so the answers live on the page.
-12. **Footer** — wide closing scene, site nav, résumé, LinkedIn, GitHub, email.
+10. **Footer** — wide closing scene, site nav, résumé, LinkedIn, GitHub, email.
