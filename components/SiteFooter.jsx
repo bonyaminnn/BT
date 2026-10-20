@@ -3,7 +3,7 @@ import { site } from "@/content/site";
 
 export default function SiteFooter() {
   const cols = [
-    ["Site", [["Work", "/work"], ["Services", "/#services"], ["About", "/about"], ["Testimonials", "/#testimonials"]]],
+    ["Site", [["Work", "/work"], ["Services", "/#services"], ["Process", "/#process"], ["About", "/about"], ["Testimonials", "/#testimonials"]]],
     ["Elsewhere", [["Résumé", "/resume.pdf"], ["LinkedIn", "https://linkedin.com/in/"], ["GitHub", "https://github.com/"]]],
   ];
   return (

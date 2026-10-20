@@ -28,12 +28,18 @@ homepage, `CreativeWork` plus `BreadcrumbList` on each case study.
 
 ## Primary navigation
 
-Work · Services · About · Testimonials · **CTA: Get in touch**
+Work · Services · Process · About · Testimonials · **CTA: Get in touch**
 
-Exactly as the IA specifies. "Get in touch" is the only button in the header and points
-at the contact section on the homepage. The wordmark carries the name alone — the
-"Design engineer" label moved to the hero's USP strip, so the role is stated once, where
-it is read rather than skimmed past.
+The IA's four links plus **Process**, which earns its place: for a hiring team it is the
+section that answers "how does this person actually work", and it was previously only
+reachable by scrolling. "Get in touch" is the only button in the header and points at the
+contact section on the homepage. The wordmark carries the name alone — the "Design
+engineer" label moved to the hero's USP strip, so the role is stated once, where it is
+read rather than skimmed past.
+
+**At phone width the links drop to a second row** that scrolls sideways, rather than
+hiding behind a hamburger. A disclosure menu costs a tap and needs JavaScript; on a site
+this small every destination can stay visible.
 
 **No eyebrows anywhere.** Section labels are gone; each section opens on its heading.
 
@@ -45,7 +51,7 @@ The IA's nine-part structure, with one breather and one Q&A block added. Compreh
 budget: **the hero alone must work in 5 seconds, and the three key messages must land
 within 3 scrolls.**
 
-1. **Navigation** — name, four links, one CTA. Sticky.
+1. **Navigation** — name, five links, one CTA. Sticky; links on a second row at phone width.
 2. **Hero** — headline, one supporting line, two CTAs ("See my work" primary, "Download
    résumé" secondary), a **USP strip** (Design engineer · Simplifying complex systems ·
    B2B SaaS · Dashboards & internal tools), and a wide **real product interface** rather
